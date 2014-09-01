@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<taglib xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://java.sun.com/xml/ns/javaee"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <tlib-version>1.0</tlib-version>
+    <short-name>ctg</short-name>
+    <uri>customtags</uri>
+
+    <tag>
+        <name>button-tag</name>
+        <tag-class>by.epam.testingsystem.tag.ButtonTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>size</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <name>step</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <name>position</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+    </tag>
+
+</taglib>
