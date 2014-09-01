@@ -1,122 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4282546c-91f4-4cdb-82f0-cfd996d5b8e5" name="Default" comment="ver 1.0">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/background.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/error_page_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jstl-1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/log4j-1.2.17.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.30-bin.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/user/AllTestsCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/entity/Answer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/user/AnswerQuestionCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/util/BCrypt.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/authorization/BackRegistration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/tag/ButtonTag.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/CancelCreateQuestionCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/CancelCreateTestCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/user/CancelTakeTestCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/ChangeLanguageCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/user/ChangePasswordCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/filter/CharacterEncodingFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/ChooseQuestionSubjectCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/ChooseQuestionTopicCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/ChooseTestSubjectCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/ChooseTestTopicsCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/ClearUserStatCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/CommandFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/CommandType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/user/CompletedTestsCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/util/ConfigurationManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/dao/pool/ConnectionPool.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/util/Constants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/exception/DAOException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/entity/Entity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/dao/EntityDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/ICommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/dao/IDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/dao/IEntityDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/dao/ITestDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/dao/IUserDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/authorization/LoginCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/authorization/LogoutCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/MainAdminPageCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/user/MainPageCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/dao/mysql/MysqlDaoFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/dao/mysql/MysqlDaoProxy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/NoCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/user/PersonalAccountCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/dao/pool/ProxyConnection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/entity/Question.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/authorization/RegistrationCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/util/SQLQueryHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/SaveNewQuestionCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/SaveNewTestCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/user/SavePersonalDataCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/user/SelectSubjectCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/listener/ServletContextListenerImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/StartAddAnswersCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/StartAddQuestionsCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/StartCreateQuestionCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/StartCreateTestCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/authorization/StartRegistrationCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/user/SubjectTestsCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/SwitchPageCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/user/TakeTestCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/entity/Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TestingSystem.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/controller/TestingSystemController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/TestingSystem_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/ToErrorPageCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/entity/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/command/admin/UserManagementCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/entity/UserType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/epam/testingsystem/filter/UserValidatorFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/admin/question/addAnswers.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/admin/test/addQuestions.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/common/adminMenu.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/admin/adminPage.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/admin/question/chooseQuestionSubject.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/admin/question/chooseQuestionTopic.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/user/test/chooseSubject.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/admin/test/chooseTestSubject.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/admin/test/chooseTestTopics.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/config.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/admin/question/createQuestion.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/admin/test/createTest.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/tld/custom.tld" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/error/error.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/error_style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/common/footer.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/general_style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/common/header.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/labels.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/labels_en.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/labels_ru.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/log.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/log4j.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/authorization/login.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/messages.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/messages_en.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/messages_ru.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/user/personalAccount.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/authorization/registration.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/user/test/showTests.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/user/test/takeTest.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/admin/management/userManagement.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/common/userMenu.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/user/userPage.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="4282546c-91f4-4cdb-82f0-cfd996d5b8e5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TestingSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -152,8 +38,8 @@
       <file leaf-file-name="log4j.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/log4j.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09264305" vertical-offset="0" max-vertical-offset="425">
-              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.27272728" vertical-offset="0" max-vertical-offset="561">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -168,6 +54,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -489,6 +382,10 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="options.lastSelected" value="preferences.externalResources" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.0.3">
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
@@ -723,13 +620,31 @@
           </settings>
         </artifact>
       </deployment>
-      <server-settings />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_8_0_3_TestingSystem_2" />
+      </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
       <predefined_log_file id="Tomcat Manager" enabled="false" />
       <predefined_log_file id="Tomcat Host Manager" enabled="false" />
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
           <artifact name="TestingSystem:war exploded" />
@@ -755,12 +670,17 @@
       <updated>1409592976643</updated>
       <workItem from="1409592980396" duration="53000" />
       <workItem from="1409593131430" duration="104000" />
-      <workItem from="1409593236425" duration="111000" />
+      <workItem from="1409593236425" duration="489000" />
     </task>
+    <task id="LOCAL-00001" summary="ver 1.0">
+      <created>1409593387997</created>
+      <updated>1409593387997</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268000" />
+    <option name="totallyTimeSpent" value="646000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -780,7 +700,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33049405" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33049405" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -788,7 +708,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24924472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -840,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/log4j.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09264305" vertical-offset="0" max-vertical-offset="425">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.27272728" vertical-offset="0" max-vertical-offset="561">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
           <folding />
         </state>
       </provider>
