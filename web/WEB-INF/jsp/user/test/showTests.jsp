@@ -12,7 +12,7 @@
 <div id="header">
     <c:import url="../../common/header.jsp" charEncoding="utf-8"/>
 </div>
-<div class="user-menu">
+<div class="menu">
     <c:import url="../../common/userMenu.jsp" charEncoding="utf-8"/>
 </div>
 <div class="main-div">
@@ -57,10 +57,10 @@
                     <td>
                             ${test.stat}
                     </td>
-                    <td>
+                    <td class="button-td">
                         <form name="performTestForm" action="controller" method="post">
                             <input type="hidden" name="command" value="TAKE_TEST"/>
-                            <button name="test_id" value="${test.id}" class="take-test-button">
+                            <button name="test_id" value="${test.id}" class="table-button">
                                 <fmt:message key="labels.jsp.showtests.table.test.take" bundle="${bundleLabel}"/>
                             </button>
                         </form>

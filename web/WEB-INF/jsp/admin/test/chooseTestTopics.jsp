@@ -11,7 +11,7 @@
 <div id="header">
     <c:import url="../../common/header.jsp" charEncoding="utf-8"/>
 </div>
-<div class="user-menu">
+<div class="menu">
     <c:import url="../../common/adminMenu.jsp" charEncoding="utf-8"/>
 </div>
 <div class="main-div">
@@ -21,7 +21,7 @@
             <fmt:message key="${badMessage}" bundle="${bundleMess}"/><br/><br/>
         </div>
     </c:if>
-    <div class="change-field">
+    <div class="center-wrapper">
         <form name="chooseTopicsForm" action="controller" method="post">
             <c:forEach var="topic" items="${topics}" varStatus="status">
                 <div class="check-box-input">
@@ -30,7 +30,7 @@
                     <label class="label-checkbox" for="${topic}"> ${topic}</label> <BR>
                 </div>
             </c:forEach>
-            <button name="command" value="CHOOSE_TOPICS">
+            <button class="big-button" name="command" value="CHOOSE_TOPICS">
                 <fmt:message key="labels.jsp.choosetopics.submit" bundle="${bundleLabel}"/>
             </button>
         </form>

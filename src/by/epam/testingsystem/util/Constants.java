@@ -11,7 +11,7 @@ public final class Constants {
     public static final String PARAM_NAME_LOCALE = "locale";
     public static final String PARAM_NAME_LOGIN = "login";
     public static final String PARAM_NAME_PASSWORD = "password";
-    public static final String PARAM_NAME_OLD_PASSWORD = "oldpassword";
+    public static final String PARAM_NAME_OLD_PASSWORD = "oldPassword";
     public static final String PARAM_NAME_REPEAT_PASSWORD = "repeatPassword";
     public static final String PARAM_NAME_NAME = "name";
     public static final String PARAM_NAME_SURNAME = "surname";

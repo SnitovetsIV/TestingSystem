@@ -100,7 +100,7 @@ public class EntityDao implements IEntityDao {
             statement.executeUpdate();
             if (statement.getUpdateCount() > 0) {
                 ResultSet rs = statement.getGeneratedKeys();
-                int questionId = -1;
+                int questionId;
                 if (rs.next()) {
                     questionId = rs.getInt(1);
                     pool.closeStatement(statement);

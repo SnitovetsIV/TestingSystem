@@ -9,7 +9,6 @@ public class BackRegistration implements ICommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        String page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.LOGIN_PAGE_PATH);
-        return page;
+        return ConfigurationManager.getInstance().getProperty(ConfigurationManager.LOGIN_PAGE_PATH);
     }
 }

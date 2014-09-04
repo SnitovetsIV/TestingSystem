@@ -13,7 +13,7 @@
 <div id="header">
     <c:import url="../../common/header.jsp" charEncoding="utf-8"/>
 </div>
-<div class="user-menu">
+<div class="menu">
     <c:import url="../../common/adminMenu.jsp" charEncoding="utf-8"/>
 </div>
 <div class="main-div">
@@ -58,10 +58,10 @@
                     <td>
                             ${user.statistic}%
                     </td>
-                    <td>
+                    <td class="button-td">
                         <form name="clearStatForm" action="controller" method="post">
                             <input type="hidden" name="command" value="CLEAR_STAT"/>
-                            <button name="userId" value="${user.id}" class="take-test-button">
+                            <button name="userId" value="${user.id}" class="table-button">
                                 <fmt:message key="labels.jsp.usermanagement.table.stat.clear" bundle="${bundleLabel}"/>
                             </button>
                         </form>

@@ -11,37 +11,42 @@
 <div id="header">
     <c:import url="../../common/header.jsp" charEncoding="utf-8"/>
 </div>
-<div class="user-menu">
+<div class="menu">
     <c:import url="../../common/adminMenu.jsp" charEncoding="utf-8"/>
 </div>
 <div class="main-div">
     <div class="header-page"><fmt:message key="labels.jsp.addanswers.header" bundle="${bundleLabel}"/></div>
-    <div class="add-question-field">
+    <div class="center-wrapper">
         <form name="addAnswersForm" action="controller" method="post">
             <c:if test="${not empty badMessage}">
                 <div class="bad-message">
                     <fmt:message key="${badMessage}" bundle="${bundleMess}"/><br/>
                 </div>
             </c:if>
+            <fmt:message key="labels.jsp.addanswers.topic" bundle="${bundleLabel}"/>: ${topicName}<br/>
+            <fmt:message key="labels.jsp.addanswers.question.description" bundle="${bundleLabel}"/>: <br/>
+            <pre class="code-style">${questionDescription}</pre>
             <h3><fmt:message key="labels.jsp.addanswers.answer.input" bundle="${bundleLabel}"/></h3>
             <ol>
                 <c:forEach var="answerItem" begin="1" end="${countAnswers}" varStatus="status">
                     <li>
-                        <span class='input'>
+                        <div class='input-field'>
                             <input type="checkbox" name="corrects" class="input-checkbox-taketest"
-                                   value="${answerItem}"> <input type="text" class="username"
-                                                                 placeholder="<fmt:message key="labels.jsp.addanswers.answer.text" bundle="${bundleLabel}"/>"
-                                                                 name="answers" value="" required><br/>
-                        </span>
+                                   value="${answerItem}"/><br/>
+                            <textarea name="answers" required rows="5" cols="40"
+                                      placeholder="<fmt:message key="labels.jsp.addanswers.answer.text"
+                              bundle="${bundleLabel}"/>"></textarea>
+                        </div>
                     </li>
+                    <hr/>
                 </c:forEach>
             </ol>
-            <button name="command" value="SAVE_NEW_QUESTION">
+            <button class="big-button" name="command" value="SAVE_NEW_QUESTION">
                 <fmt:message key="labels.jsp.addanswers.save" bundle="${bundleLabel}"/>
             </button>
         </form>
         <form name="cancelCreateTestForm" action="controller" method="post">
-            <button name="command" value="CANCEL_CREATE_QUESTION">
+            <button class="big-button" name="command" value="CANCEL_CREATE_QUESTION">
                 <fmt:message key="labels.jsp.addanswers.cancel" bundle="${bundleLabel}"/>
             </button>
         </form>

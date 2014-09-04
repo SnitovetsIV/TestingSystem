@@ -5,6 +5,7 @@
 <fmt:setBundle basename="resources.config" var="bundleConf" scope="session"/>
 <fmt:setBundle basename="resources.labels" var="bundleLabel" scope="session"/>
 <fmt:setBundle basename="resources.messages" var="bundleMess" scope="session"/>
+<!DOCTYPE html>
 <html>
 <head>
     <title><fmt:message key="labels.jsp.login.title" bundle="${bundleLabel}"/></title>
@@ -16,37 +17,37 @@
 </div>
 <div id="page-wrapper">
     <div id="login">
-        <h1><fmt:message key="labels.jsp.login.enter" bundle="${bundleLabel}"/><span class='orangestop'>.</span></h1>
+        <h1><fmt:message key="labels.jsp.login.enter" bundle="${bundleLabel}"/><span class="orange-stop">.</span></h1>
 
-        <form name="loginForm" action="controller" method="post" autocomplete="off">
+        <form name="loginForm" action="controller" method="post">
             <c:if test="${not empty badMessage}">
                 <div class="bad-message">
-                    <fmt:message key="${badMessage}" bundle="${bundleMess}"/><br/>
+                    <fmt:message key="${badMessage}" bundle="${bundleMess}"/>
                 </div>
             </c:if>
             <c:if test="${not empty goodMessage}">
                 <div class="good-message">
-                    <fmt:message key="${goodMessage}" bundle="${bundleMess}"/><br/>
+                    <fmt:message key="${goodMessage}" bundle="${bundleMess}"/>
                 </div>
             </c:if>
-            <span class='input'>
-                <span class='icon username-icon fontawesome-user'></span>
-                <input type="text" class="username"
+            <div class="input-field">
+                <span class="icon username-icon fontawesome-user"></span>
+                <input type="text" class="auth-input"
                        placeholder="<fmt:message key="labels.jsp.login.login" bundle="${bundleLabel}"/>"
-                       name="login" value="" required><br/>
-            </span>
-            <span class='input'>
-                <span class='icon password-icon fontawesome-lock'></span>
-                <input type="password" class='password'
+                       name="login" value="${login}" required/><br/>
+            </div>
+            <div class="input-field">
+                <span class="icon password-icon fontawesome-lock"></span>
+                <input type="password" class="auth-input"
                        placeholder="<fmt:message key="labels.jsp.login.password" bundle="${bundleLabel}"/> "
                        name="password" required value=""><br/>
-            </span>
-            <button name="command" value="LOGIN">
+            </div>
+            <button class="big-button" name="command" value="LOGIN">
                 <fmt:message key="labels.jsp.login.enter" bundle="${bundleLabel}"/>
             </button>
         </form>
         <form name="registrationForm" action="controller" method="post">
-            <button name="command" value="START_REGISTRATION">
+            <button class="big-button" name="command" value="START_REGISTRATION">
                 <fmt:message key="labels.jsp.login.registration" bundle="${bundleLabel}"/>
             </button>
         </form>

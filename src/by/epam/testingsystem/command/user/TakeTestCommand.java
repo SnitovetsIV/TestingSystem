@@ -16,7 +16,7 @@ public class TakeTestCommand implements ICommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        String page = null;
+        String page;
         HttpSession session = request.getSession();
         int testId = Integer.parseInt(request.getParameter(Constants.PARAM_NAME_TEST_ID));
         List<Test> tests = (List<Test>) session.getAttribute(Constants.PARAM_NAME_TESTS);

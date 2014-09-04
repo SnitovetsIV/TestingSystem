@@ -34,6 +34,7 @@ public class RegistrationCommand implements ICommand {
             if (userDao.createUser(login, hashPassword)) {
                 request.setAttribute(Constants.ATR_GOOD_MESSAGE, Constants.LOGIN_REG_SUCCESS_MESS);
                 page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.LOGIN_PAGE_PATH);
+                request.setAttribute(Constants.PARAM_NAME_LOGIN, login);
             } else {
                 LOG.error("Can't create new user.");
                 request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.REG_ERROR_MESS);

@@ -11,16 +11,16 @@
 <div id="header">
     <c:import url="../../common/header.jsp" charEncoding="utf-8"/>
 </div>
-<div class="user-menu">
+<div class="menu">
     <c:import url="../../common/adminMenu.jsp" charEncoding="utf-8"/>
 </div>
 <div class="main-div">
     <div class="header-page"><fmt:message key="labels.jsp.choosequestiontopic.header" bundle="${bundleLabel}"/></div>
-    <div class="change-field">
+    <div class="center-wrapper">
         <c:forEach var="topic" items="${topics}" varStatus="status">
             <form name="chooseTopicForm" action="controller" method="post">
                 <input type="hidden" name="command" value="CHOOSE_QUESTION_TOPIC"/>
-                <button name="topicName" value="${topic}">
+                <button class="big-button" name="topicName" value="${topic}">
                         ${topic}
                 </button>
             </form>

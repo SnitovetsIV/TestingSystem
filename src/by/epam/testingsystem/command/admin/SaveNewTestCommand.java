@@ -13,7 +13,7 @@ public class SaveNewTestCommand implements ICommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        String page = null;
+        String page;
         HttpSession session = request.getSession();
         String name = (String) session.getAttribute(Constants.PARAM_NAME_TEST_NAME);
         String description = (String) session.getAttribute(Constants.PARAM_NAME_TEST_DESCRIPTION);

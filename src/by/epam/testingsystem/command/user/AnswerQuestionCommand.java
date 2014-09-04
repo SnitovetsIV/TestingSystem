@@ -14,8 +14,8 @@ import javax.servlet.http.HttpSession;
 
 public class AnswerQuestionCommand implements ICommand {
 
-    public static final int CONST_TRANSFER_PERCENT = 100;
-    public static final String PERCENT_STRING = "%";
+    private static final int CONST_TRANSFER_PERCENT = 100;
+    private static final String PERCENT_STRING = "%";
 
     @Override
     public String execute(HttpServletRequest request) {

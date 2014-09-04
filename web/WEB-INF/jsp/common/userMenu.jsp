@@ -8,27 +8,27 @@
 </head>
 <body>
 <form name="userMenu" action="controller" method="post">
-    <button name="command" value="MAIN_PAGE">
+    <button class="big-button" name="command" value="MAIN_PAGE">
         <fmt:message key="labels.jsp.menu.user.mainpage" bundle="${bundleLabel}"/>
     </button>
     <br/>
-    <button name="command" value="PERSONAL_ACCOUNT">
+    <button class="big-button" name="command" value="PERSONAL_ACCOUNT">
         <fmt:message key="labels.jsp.menu.user.personalaccount" bundle="${bundleLabel}"/>
     </button>
     <br/>
-    <button name="command" value="ALL_TESTS">
+    <button class="big-button" name="command" value="ALL_TESTS">
         <fmt:message key="labels.jsp.menu.user.test.all" bundle="${bundleLabel}"/>
     </button>
     <br/>
-    <button name="command" value="SUBJECT_TESTS">
+    <button class="big-button" name="command" value="SUBJECT_TESTS">
         <fmt:message key="labels.jsp.menu.user.test.subject" bundle="${bundleLabel}"/>
     </button>
     <br/>
-    <button name="command" value="COMPLETED_TESTS">
+    <button class="big-button" name="command" value="COMPLETED_TESTS">
         <fmt:message key="labels.jsp.menu.user.test.completed" bundle="${bundleLabel}"/>
     </button>
     <br/>
-    <button name="command" value="LOGOUT">
+    <button class="big-button" name="command" value="LOGOUT">
         <fmt:message key="labels.jsp.menu.user.logout" bundle="${bundleLabel}"/>
     </button>
 </form>

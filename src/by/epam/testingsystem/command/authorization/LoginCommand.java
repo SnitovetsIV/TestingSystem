@@ -40,12 +40,15 @@ public class LoginCommand implements ICommand {
                             request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.LOGIN_UNKNOWN_USER_TYPE_MESS);
                     }
                 } else {
+                    request.setAttribute(Constants.PARAM_NAME_LOGIN, login);
                     request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.LOGIN_BAD_LOGIN_PASS_MESS);
                 }
             } else {
+                request.setAttribute(Constants.PARAM_NAME_LOGIN, login);
                 request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.LOGIN_BAD_LOGIN_PASS_MESS);
             }
         } else {
+            request.setAttribute(Constants.PARAM_NAME_LOGIN, login);
             request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.LOGIN_BAD_LOGIN_PASS_MESS);
         }
         return page;

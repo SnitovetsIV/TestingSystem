@@ -88,7 +88,7 @@ public class ConnectionPool {
      */
 
     public ProxyConnection getConnection() throws DAOException {
-        ProxyConnection connection = null;
+        ProxyConnection connection;
         try {
             connection = connectionQueue.poll(WAIT_TIME, TimeUnit.MILLISECONDS);
             if (connection == null) {

@@ -11,7 +11,7 @@
 <div id="header">
     <c:import url="../common/header.jsp" charEncoding="utf-8"/>
 </div>
-<div class="user-menu">
+<div class="menu">
     <c:import url="../common/adminMenu.jsp" charEncoding="utf-8"/>
 </div>
 <div class="main-div">

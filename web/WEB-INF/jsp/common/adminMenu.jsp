@@ -8,23 +8,23 @@
 </head>
 <body>
 <form name="userMenu" action="controller" method="post">
-    <button name="command" value="MAIN_ADMIN_PAGE">
+    <button class="big-button" name="command" value="MAIN_ADMIN_PAGE">
         <fmt:message key="labels.jsp.menu.admin.mainpage" bundle="${bundleLabel}"/>
     </button>
     <br/>
-    <button name="command" value="START_CREATE_TEST">
+    <button class="big-button" name="command" value="START_CREATE_TEST">
         <fmt:message key="labels.jsp.menu.admin.test.create" bundle="${bundleLabel}"/>
     </button>
     <br/>
-    <button name="command" value="START_CREATE_QUESTION">
+    <button class="big-button" name="command" value="START_CREATE_QUESTION">
         <fmt:message key="labels.jsp.menu.admin.question.create" bundle="${bundleLabel}"/>
     </button>
     <br/>
-    <button name="command" value="USER_MANAGEMENT">
+    <button class="big-button" name="command" value="USER_MANAGEMENT">
         <fmt:message key="labels.jsp.menu.admin.user.management" bundle="${bundleLabel}"/>
     </button>
     <br/>
-    <button name="command" value="LOGOUT">
+    <button class="big-button" name="command" value="LOGOUT">
         <fmt:message key="labels.jsp.menu.admin.logout" bundle="${bundleLabel}"/>
     </button>
 </form>

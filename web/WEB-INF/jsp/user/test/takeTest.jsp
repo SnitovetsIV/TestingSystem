@@ -11,7 +11,7 @@
 <div id="header">
     <c:import url="../../common/header.jsp" charEncoding="utf-8"/>
 </div>
-<div class="user-menu">
+<div class="menu">
     <c:import url="../../common/userMenu.jsp" charEncoding="utf-8"/>
 </div>
 <div class="main-div">
@@ -39,12 +39,12 @@
                     <label class="label-checkbox" for="answers">${answer.description} -
                         (${answer.isCorrect()})<br/></label>
                 </c:forEach>
-                <button name="command" value="ANSWER_QUESTION">
+                <button class="big-button" name="command" value="ANSWER_QUESTION">
                     <fmt:message key="labels.jsp.taketest.answer" bundle="${bundleLabel}"/>
                 </button>
             </form>
             <form name="cancelTakeTestForm" action="controller" method="post">
-                <button name="command" value="CANCEL_TAKE_TEST">
+                <button class="big-button" name="command" value="CANCEL_TAKE_TEST">
                     <fmt:message key="labels.jsp.taketest.test.cancel" bundle="${bundleLabel}"/>
                 </button>
             </form>

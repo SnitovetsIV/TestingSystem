@@ -8,10 +8,9 @@
 
 body {
     width: 100%;
-    background: url('../images/background.jpg') fixed no-repeat;
+    background: url('../images/background.jpg') no-repeat fixed;
     background-size: cover;
     overflow-x: hidden;
-    background-repeat: no-repeat;
 }
 
 h1 {
@@ -46,22 +45,32 @@ h4 {
     text-indent: 24px;
 }
 
-input {
+.big-input {
     width: 312px;
+}
+
+.auth-input {
+    width: 242px;
+}
+
+.big-input,
+.auth-input {
     height: 40px;
     background: #242c32;
     border: 0;
     border-radius: 3px;
+    color: #fff;
     border-bottom: 1px solid #646c72;
-    margin-left: 40.5px;
+    margin-left: 40px;
+    margin-bottom: 10px;
     outline: 0;
     padding-left: 70px;
     font-family: 'Roboto Condensed', sans-serif;
-    color: #fff;
-    margin-bottom: 10px;
+
 }
 
 .input-checkbox-taketest {
+    margin: 0 auto;
     width: auto;
     height: auto;
 }
@@ -71,6 +80,13 @@ input {
     display: inline;
     text-indent: 24px;
     margin-left: 40px;
+}
+
+textarea {
+    background: #242c32;
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
 }
 
 .input-create-choose {
@@ -85,29 +101,73 @@ input {
     margin-top: 20px;
 }
 
-button {
-    margin-left: 40.5px;
-    margin-right: 40.5px;
+.create-test-input {
+    width: 312px;
+    height: 40px;
+    background: #242c32;
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    border-bottom: 1px solid #646c72;
+    margin-left: 40px;
+    outline: 0;
+    padding-left: 70px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-bottom: 10px;
+}
+
+.big-button {
+    margin-left: 40px;
+    margin-right: 40px;
     margin-top: 10px;
     border: 0;
+    width: 312px;
+    height: 45px;
+    font-size: 26px;
+}
+
+.table-button {
+    border-left: 1px solid #f0a18b;
+    width: 120px;
+    min-height: 45px;
+    font-size: 20px;
+}
+
+.page-button {
+    border: 0;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    font-size: 10px;
+}
+
+.big-button,
+.table-button,
+.page-button {
     border-top: 1px solid #f0a18b;
     border-radius: 3px;
     background: #e76744;
-    width: 312px;
-    height: 45px;
     color: #fff;
-    font-size: 26px;
     font-family: 'Ubuntu';
-    -webkit-text-shadow: 0px 1px 1px #000;
-    -moz-text-shadow: 0px 1px 1px #000;
-    text-shadow: 0px 2px 1px #000;
-    -webkit-box-shadow: 0px 1px 1px #000;
-    -moz-box-shadow: 0px 1px 1px #000;
-    box-shadow: 0px 1px 1px #000;
+    -webkit-text-shadow: 0 1px 1px #000;
+    -moz-text-shadow: 0 1px 1px #000;
+    text-shadow: 0 2px 1px #000;
+    -webkit-box-shadow: 0 1px 1px #000;
+    -moz-box-shadow: 0 1px 1px #000;
+    box-shadow: 0 1px 1px #000;
 }
 
-ol {
-    margin-left: 40.5px;
+.button-td {
+    width: 130px;
+}
+
+form {
+    margin-bottom: 0 !important;
+}
+
+.create-test-description {
+    width: 312px;
+    margin-left: 40px;
 }
 
 li {
@@ -129,6 +189,7 @@ p {
 }
 
 /*основной блок страниц авторизации*/
+
 #page-wrapper {
     min-height: 600px;
     height: auto;
@@ -137,6 +198,7 @@ p {
 }
 
 /*блок хэдера*/
+
 #header {
     width: 100%;
     height: 5%;
@@ -146,6 +208,7 @@ p {
 }
 
 /*блок футера*/
+
 #footer {
     height: 30px;
     font-family: 'Roboto Condensed', sans-serif;
@@ -155,37 +218,29 @@ p {
 }
 
 /*страница логина*/
+
 #login {
     width: 393px;
     height: 390px;
-    position: absolute;
-    top: 120px;
-    left: 0;
-    right: 0;
     margin: auto;
-    border-radius: 3px;
-    border-top: 1px solid #464c4c;
-    background: rgb(26, 34, 37);
-    background: -moz-linear-gradient(top, rgba(26, 34, 37, .60) 0%, rgba(75, 87, 94, 0.60) 15%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(26, 34, 37, .60)), color-stop(65%, rgba(75, 87, 94, .60)));
-    background: -webkit-linear-gradient(top, rgba(26, 34, 37, .60) 0%, rgba(75, 87, 94, .60) 15%);
-    background: -o-linear-gradient(top, rgba(26, 34, 37, .60) 0%, rgba(75, 87, 94, .60) 15%);
-    background: -ms-linear-gradient(top, rgba(26, 34, 37, .60) 0%, rgba(75, 87, 94, .60) 15%);
-    background: linear-gradient(to bottom, rgba(26, 34, 37, .60) 0%, rgba(75, 87, 94, .60) 15%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a2225', endColorstr='#4b575e', GradientType=0);
 
 }
 
 /*страница регистрации*/
-#loginR {
+
+#registration {
     padding-bottom: 100px;
     height: auto;
+    margin: auto auto 50px;
+
+}
+
+#login,
+#registration {
     position: absolute;
     top: 120px;
     left: 0;
     right: 0;
-    margin: auto;
-    margin-bottom: 50px;
     border-radius: 3px;
     border-top: 1px solid #464c4c;
     background: rgb(26, 34, 37);
@@ -198,7 +253,7 @@ p {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a2225', endColorstr='#4b575e', GradientType=0);
 }
 
-.change-field {
+.center-wrapper {
     left: 0;
     right: 0;
     margin: auto;
@@ -224,15 +279,11 @@ p {
     text-indent: 24px;
 }
 
-.registration-text {
-
-}
-
-.orangestop {
+.orange-stop {
     color: #e76744;
 }
 
-.input {
+.input-field {
     position: relative;
 }
 
@@ -240,7 +291,7 @@ p {
     position: absolute;
     left: 65px;
     padding: 5px 0;
-    top: -4px;
+    margin-top: 6px;
     height: 20px;
     width: 30px;
     color: #fff;
@@ -249,7 +300,28 @@ p {
 .check-box-input {
     height: 50px;
     top: 20px;
-    margin-left: -200px;
+    margin-left: 40px;
+}
+
+.image-error {
+    display: block;
+    margin: 0 auto;
+    height: 50%;
+}
+
+.number-input {
+    background: #242c32;
+    border: 0;
+    border-radius: 3px;
+    border-bottom: 1px solid #646c72;
+    color: #fff;
+    margin: 15px 50px;
+    outline: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.count-answ {
+    margin-left: 20px;
 }
 
 .check-box-input-q {
@@ -318,8 +390,7 @@ p {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 500;
     color: #ff0000;
-    margin: 0 auto;
-
+    margin: 10px auto;
 }
 
 .good-message {
@@ -328,49 +399,7 @@ p {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700;
     color: darkgreen;
-    margin: 0 auto;
-}
-
-.take-test-button {
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    border: 0;
-    border-top: 1px solid #f0a18b;
-    border-radius: 3px;
-    background: #e76744;
-    width: 120px;
-    height: 45px;
-    color: #fff;
-    font-size: 20px;
-    font-family: 'Ubuntu';
-    -webkit-text-shadow: 0px 1px 1px #000;
-    -moz-text-shadow: 0px 1px 1px #000;
-    text-shadow: 0px 2px 1px #000;
-    -webkit-box-shadow: 0px 1px 1px #000;
-    -moz-box-shadow: 0px 1px 1px #000;
-    box-shadow: 0px 1px 1px #000;
-}
-
-.page-button {
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    border: 0;
-    border-top: 0px solid #f0a18b;
-    border-radius: 0px;
-    background: #e76744;
-    width: 20px;
-    height: 20px;
-    color: #fff;
-    font-size: 10px;
-    font-family: 'Ubuntu';
-    -webkit-text-shadow: 0px 1px 1px #000;
-    -moz-text-shadow: 0px 1px 1px #000;
-    text-shadow: 0px 2px 1px #000;
-    -webkit-box-shadow: 0px 1px 1px #000;
-    -moz-box-shadow: 0px 1px 1px #000;
-    box-shadow: 0px 1px 1px #000;
+    margin: 10px auto;
 }
 
 .chose-lang button {
@@ -425,8 +454,8 @@ p {
     position: absolute;
     right: 6px;
     content: '';
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     border-style: solid;
     border-width: 5px 4px 0 4px;
 }
@@ -506,7 +535,7 @@ p {
 /*****/
 
 /*меню на странице пользователя*/
-.user-menu button {
+.menu button {
     height: 40px;
     text-align: left;
     width: 100%;
@@ -518,7 +547,7 @@ p {
     margin-left: 15%;
 }
 
-.user-menu {
+.menu {
     padding-top: 100px;
     float: left;
     width: 20%;
@@ -534,9 +563,25 @@ p {
     border-radius: 3px;
     opacity: 0.7; /* Значение прозрачности */
     filter: alpha(Opacity=70); /* Прозрачность в IE */
+    padding: 2px 2px 15px;
+    text-orientation: rotate-left;
+}
+
+.error-div {
+    position: absolute;
+    top: 55%;
+    width: 50%;
+    background-color: white;
+    margin-left: 25%;
+    border-radius: 3px;
+    opacity: 0.7; /* Значение прозрачности */
+    filter: alpha(Opacity=70); /* Прозрачность в IE */
     padding: 2px;
     text-orientation: rotate-left;
+}
 
+.red-stop {
+    color: #ff0000;
 }
 
 .main-div p {
@@ -575,9 +620,9 @@ table {
     border-collapse: separate;
 }
 
-table td {
+/*table td {
     min-width: 15%;
-}
+}*/
 
 table tr {
     border-color: black;
@@ -590,61 +635,61 @@ table tr {
 
 .simpleTable {
     font-family: 'Roboto Condensed', sans-serif;
-    margin: 0px;
-    padding: 0px;
-    margin-top: 10px;
+    padding: 0;
+    margin: 10px 0px 0px;
     width: 100%;
     left: 0;
     right: 0;
     border: 1px solid #000000;
 
-    -moz-border-radius-bottomleft: 0px;
-    -webkit-border-bottom-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
 
-    -moz-border-radius-bottomright: 0px;
-    -webkit-border-bottom-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
 
-    -moz-border-radius-topright: 0px;
-    -webkit-border-top-right-radius: 0px;
-    border-top-right-radius: 0px;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
 
-    -moz-border-radius-topleft: 0px;
-    -webkit-border-top-left-radius: 0px;
-    border-top-left-radius: 0px;
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
 }
 
 .simpleTable table {
     font-family: 'Roboto Condensed', sans-serif;
     border-collapse: collapse;
     border-spacing: 0;
-    width: 100% margin : 0 px;
-    padding: 0px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .simpleTable tr:last-child td:last-child {
-    -moz-border-radius-bottomright: 0px;
-    -webkit-border-bottom-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .simpleTable table tr:first-child td:first-child {
-    -moz-border-radius-topleft: 0px;
-    -webkit-border-top-left-radius: 0px;
-    border-top-left-radius: 0px;
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
 }
 
 .simpleTable table tr:first-child td:last-child {
-    -moz-border-radius-topright: 0px;
-    -webkit-border-top-right-radius: 0px;
-    border-top-right-radius: 0px;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .simpleTable tr:last-child td:first-child {
-    -moz-border-radius-bottomleft: 0px;
-    -webkit-border-bottom-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .simpleTable tr:nth-child(odd) {
@@ -658,7 +703,7 @@ table tr {
 .simpleTable td {
     vertical-align: middle;
     border: 1px solid #000000;
-    border-width: 0px 1px 1px 0px;
+    border-width: 0 1px 1px 0;
     text-align: left;
     padding: 7px;
     font-size: 15px;
@@ -669,15 +714,15 @@ table tr {
 }
 
 .simpleTable tr:last-child td {
-    border-width: 0px 1px 0px 0px;
+    border-width: 0 1px 0 0;
 }
 
 .simpleTable tr td:last-child {
-    border-width: 0px 0px 1px 0px;
+    border-width: 0 0 1px 0;
 }
 
 .simpleTable tr:last-child td:last-child {
-    border-width: 0px 0px 0px 0px;
+    border-width: 0 0 0 0;
 }
 
 .simpleTable tr:first-child td {
@@ -687,9 +732,9 @@ table tr {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff7f00", endColorstr="#bf5f00");
     background: -o-linear-gradient(top, #ff7f00, bf5f00);
     background-color: #ff7f00;
-    border: 0px solid #000000;
+    border: 0 solid #000000;
     text-align: center;
-    border-width: 0px 0px 1px 1px;
+    border-width: 0 0 1px 1px;
     font-size: 19px;
     font-family: Arial;
     font-weight: bold;
@@ -706,11 +751,11 @@ table tr {
 }
 
 .simpleTable tr:first-child td:first-child {
-    border-width: 0px 0px 1px 0px;
+    border-width: 0 0 1px 0;
 }
 
 .simpleTable tr:first-child td:last-child {
-    border-width: 0px 0px 1px 1px;
+    border-width: 0 0 1px 1px;
 }
 
 .simpleTable caption {

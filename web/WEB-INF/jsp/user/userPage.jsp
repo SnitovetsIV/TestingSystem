@@ -11,21 +11,25 @@
 <div id="header">
     <c:import url="../common/header.jsp" charEncoding="utf-8"/>
 </div>
-<div class="user-menu">
+<div class="menu">
     <c:import url="../common/userMenu.jsp" charEncoding="utf-8"/>
 </div>
 <div class="main-div">
     <div class="header-page"><fmt:message key="labels.jsp.userpage.header" bundle="${bundleLabel}"/></div>
     <h3><fmt:message key="labels.jsp.userpage.hello" bundle="${bundleLabel}"/></h3><br/>
-    ${resultTest}<br/>
-    <c:if test="${not empty changePassMess}">
+    <c:if test="${not empty badMessage}">
         <div class="bad-message">
-            <fmt:message key="${changePassMess}" bundle="${bundleMess}"/><br/>
+            <fmt:message key="${badMessage}" bundle="${bundleMess}"/><br/>
         </div>
     </c:if>
-    <c:if test="${not empty successChangePassMess}">
+    <c:if test="${not empty goodMessage}">
         <div class="good-message">
-            <fmt:message key="${successChangePassMess}" bundle="${bundleMess}"/><br/>
+            <fmt:message key="${goodMessage}" bundle="${bundleMess}"/><br/>
+        </div>
+    </c:if>
+    <c:if test="${not empty resultTest}">
+        <div class="result-test">
+            <fmt:message key="labels.jsp.userpage.beforeresult" bundle="${bundleLabel}"/> ${resultTest}
         </div>
     </c:if>
 </div>
