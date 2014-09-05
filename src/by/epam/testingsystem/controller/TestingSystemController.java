@@ -32,6 +32,7 @@ public class TestingSystemController extends HttpServlet {
             page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.LOGIN_PAGE_PATH);
             req.setAttribute(Constants.ATR_GOOD_MESSAGE, Constants.LOGIN_NULL_PAGE_MESS);
         }
+        req.getSession().setAttribute(Constants.ATR_PAGE, page);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
         dispatcher.forward(req, resp);
     }

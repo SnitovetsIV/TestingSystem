@@ -11,12 +11,12 @@ public class StartAddQuestionsCommand implements ICommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        HttpSession session = request.getSession();
-        String testName = request.getParameter(Constants.PARAM_NAME_TEST_NAME);
         String page;
+        String testName = request.getParameter(Constants.ATR_TEST_NAME);
         if ((testName != null) && (!testName.isEmpty())) {
-            session.setAttribute(Constants.PARAM_NAME_TEST_NAME, testName);
-            session.setAttribute(Constants.PARAM_NAME_TEST_DESCRIPTION, request.getParameter(Constants.PARAM_NAME_TEST_DESCRIPTION));
+            HttpSession session = request.getSession();
+            session.setAttribute(Constants.ATR_TEST_NAME, testName);
+            session.setAttribute(Constants.ATR_TEST_DESCRIPTION, request.getParameter(Constants.ATR_TEST_DESCRIPTION));
             page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.ADD_QUESTIONS_PAGE_PATH);
         } else {
             page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.CREATE_TEST_PAGE_PATH);

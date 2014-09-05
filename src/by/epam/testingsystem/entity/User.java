@@ -10,6 +10,9 @@ public class User extends Entity {
     private double statistic;
     private UserType type;
 
+    public User() {
+    }
+
     public int getCountCompletedTests() {
         return countCompletedTests;
     }

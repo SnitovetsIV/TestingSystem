@@ -13,7 +13,7 @@ public class NoCommand implements ICommand {
     public String execute(HttpServletRequest request) {
         String page;
         HttpSession session = request.getSession();
-        User user = (User) session.getAttribute(Constants.PARAM_NAME_USER);
+        User user = (User) session.getAttribute(Constants.ATR_USER);
         if (user != null) {
             switch (user.getType()) {
                 case ADMIN:
@@ -23,7 +23,7 @@ public class NoCommand implements ICommand {
                     page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.USER_PAGE_PATH);
                     break;
                 default:
-                    session.removeAttribute(Constants.PARAM_NAME_USER);
+                    session.removeAttribute(Constants.ATR_USER);
                     page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.LOGIN_PAGE_PATH);
                     request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.LOGIN_UNKNOWN_USER_TYPE_MESS);
             }

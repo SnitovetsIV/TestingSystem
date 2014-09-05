@@ -60,7 +60,6 @@ public class ConnectionPool {
     /**
      * Close all connections
      */
-
     public static void releasePool() {
         if (instance != null) {
             lock.lock();
@@ -84,9 +83,8 @@ public class ConnectionPool {
 
     /**
      * @return ProxyConnection
-     * @throws DAOException if timeout expired of InterruptedException was found
+     * @throws DAOException if timeout expired or InterruptedException was found
      */
-
     public ProxyConnection getConnection() throws DAOException {
         ProxyConnection connection;
         try {
@@ -103,7 +101,6 @@ public class ConnectionPool {
     /**
      * @param connection ProxyConnection that you received from this pool
      */
-
     public void putConnection(ProxyConnection connection) {
         try {
             if (connection != null) {
@@ -119,7 +116,6 @@ public class ConnectionPool {
      *
      * @param st statement
      */
-
     public void closeStatement(Statement st) {
         try {
             if (st != null) {

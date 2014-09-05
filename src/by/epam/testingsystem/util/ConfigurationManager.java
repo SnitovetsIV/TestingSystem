@@ -15,12 +15,14 @@ public final class ConfigurationManager {
     //authorization pages
     public static final String LOGIN_PAGE_PATH = "config.page.authorization.login";
     public static final String REGISTRATION_PAGE_PATH = "config.page.authorization.registration";
+
     //user pages
     public static final String USER_PAGE_PATH = "config.page.user.main";
     public static final String PERSONAL_ACCOUNT_PAGE_PATH = "config.page.user.personal";
     public static final String SHOW_TESTS_PAGE_PATH = "config.page.user.test.show";
     public static final String TAKE_TEST_PAGE_PATH = "config.page.user.test.take";
     public static final String CHOOSE_SUBJECT_PAGE_PATH = "config.page.user.choose.subject";
+
     //admin pages
     public static final String ADMIN_PAGE_PATH = "config.page.admin.main";
     public static final String CREATE_TEST_PAGE_PATH = "config.page.admin.test.create";
@@ -32,6 +34,7 @@ public final class ConfigurationManager {
     public static final String CHOOSE_QUESTION_TOPIC_PAGE_PATH = "config.page.admin.question.choose.topic";
     public static final String ADD_ANSWERS_PAGE_PATH = "config.page.admin.question.add.answers";
     public static final String USER_MANAGEMENT_PAGE_PATH = "config.page.admin.management.user";
+
     //error pages
     public static final String ERROR_PAGE_PATH = "config.page.error";
 

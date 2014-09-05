@@ -15,7 +15,7 @@ public class SubjectTestsCommand implements ICommand {
     public String execute(HttpServletRequest request) {
         ITestDao dao = MysqlDaoFactory.getInstance().getTestDAO();
         List<String> subjects = dao.readAllSubjects();
-        request.getSession().setAttribute(Constants.PARAM_NAME_SUBJECTS, subjects);
+        request.getSession().setAttribute(Constants.ATR_SUBJECTS, subjects);
         return ConfigurationManager.getInstance().getProperty(ConfigurationManager.CHOOSE_SUBJECT_PAGE_PATH);
     }
 }

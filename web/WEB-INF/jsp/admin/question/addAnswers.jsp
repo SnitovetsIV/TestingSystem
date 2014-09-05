@@ -31,7 +31,7 @@
                 <c:forEach var="answerItem" begin="1" end="${countAnswers}" varStatus="status">
                     <li>
                         <div class='input-field'>
-                            <input type="checkbox" name="corrects" class="input-checkbox-taketest"
+                            <input type="checkbox" name="correctAnswers"
                                    value="${answerItem}"/><br/>
                             <textarea name="answers" required rows="5" cols="40"
                                       placeholder="<fmt:message key="labels.jsp.addanswers.answer.text"

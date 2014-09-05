@@ -19,10 +19,10 @@ public class AllTestsCommand implements ICommand {
         String page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.SHOW_TESTS_PAGE_PATH);
         ITestDao testDao = MysqlDaoFactory.getInstance().getTestDAO();
         HttpSession session = request.getSession();
-        User user = (User) session.getAttribute(Constants.PARAM_NAME_USER);
+        User user = (User) session.getAttribute(Constants.ATR_USER);
         List<Test> tests = testDao.readAllTests(user.getId());
-        session.setAttribute(Constants.PARAM_NAME_TESTS, tests);
-        session.setAttribute(Constants.PARAM_NAME_START_LIST, 0);
+        session.setAttribute(Constants.ATR_TESTS, tests);
+        session.setAttribute(Constants.ATR_START_LIST, 0);
         return page;
     }
 }

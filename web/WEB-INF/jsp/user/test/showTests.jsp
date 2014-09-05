@@ -60,7 +60,7 @@
                     <td class="button-td">
                         <form name="performTestForm" action="controller" method="post">
                             <input type="hidden" name="command" value="TAKE_TEST"/>
-                            <button name="test_id" value="${test.id}" class="table-button">
+                            <button name="testId" value="${test.id}" class="table-button">
                                 <fmt:message key="labels.jsp.showtests.table.test.take" bundle="${bundleLabel}"/>
                             </button>
                         </form>

@@ -38,7 +38,6 @@ class MysqlDaoProxy implements InvocationHandler {
                 } catch (InvocationTargetException e) {
                     throw e.getTargetException();
                 }
-
             }
         }
         Object result = null;

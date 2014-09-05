@@ -34,7 +34,7 @@
         <div class="check-box-input" style="height: auto">
             <form name="takeTestForm" action="controller" method="post">
                 <c:forEach var="answer" items="${question.answers}" varStatus="status">
-                    <input class="input-checkbox-taketest" id="answers" type="checkbox"
+                    <input id="answers" type="checkbox"
                            name="answers" value="${answer.id}"/>
                     <label class="label-checkbox" for="answers">${answer.description} -
                         (${answer.isCorrect()})<br/></label>

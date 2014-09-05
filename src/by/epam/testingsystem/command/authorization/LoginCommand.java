@@ -21,6 +21,7 @@ public class LoginCommand implements ICommand {
         String login = request.getParameter(Constants.PARAM_NAME_LOGIN);
         String password = request.getParameter(Constants.PARAM_NAME_PASSWORD);
         if ((login != null) && (!login.isEmpty()) && (password != null) && (!password.isEmpty())) {
+            login = login.trim();
             IUserDao userDao = MysqlDaoFactory.getInstance().getUserDAO();
             User user = userDao.findUserByLogin(login);
             if (user != null) {
@@ -28,12 +29,12 @@ public class LoginCommand implements ICommand {
                     switch (user.getType()) {
                         case USER:
                             page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.USER_PAGE_PATH);
-                            request.getSession().setAttribute(Constants.PARAM_NAME_USER, user);
+                            request.getSession().setAttribute(Constants.ATR_USER, user);
                             LOG.info("USER " + user.getLogin() + " was login");
                             break;
                         case ADMIN:
                             page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.ADMIN_PAGE_PATH);
-                            request.getSession().setAttribute(Constants.PARAM_NAME_USER, user);
+                            request.getSession().setAttribute(Constants.ATR_USER, user);
                             LOG.info("ADMIN " + user.getLogin() + " was login");
                             break;
                         default:

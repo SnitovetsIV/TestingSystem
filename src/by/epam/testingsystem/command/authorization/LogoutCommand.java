@@ -18,16 +18,18 @@ public class LogoutCommand implements ICommand {
     public String execute(HttpServletRequest request) {
         String page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.LOGIN_PAGE_PATH);
         HttpSession session = request.getSession();
-        User user = (User) session.getAttribute(Constants.PARAM_NAME_USER);
+        User user = (User) session.getAttribute(Constants.ATR_USER);
         if (user != null) {
             LOG.info(user.getType() + " " + user.getLogin() + " was logout");
+            request.setAttribute(Constants.PARAM_NAME_LOGIN, user.getLogin());
         }
-        Locale lang = (Locale) session.getAttribute(Constants.PARAM_NAME_LOCALE);
+        Locale lang = (Locale) session.getAttribute(Constants.ATR_LOCALE);
         session.invalidate();
         if (lang == null) {
             lang = Locale.getDefault();
         }
-        request.getSession().setAttribute(Constants.PARAM_NAME_LOCALE, lang);
+        session = request.getSession();
+        session.setAttribute(Constants.ATR_LOCALE, lang);
         return page;
     }
 }

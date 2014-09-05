@@ -12,12 +12,11 @@ public class CancelTakeTestCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request) {
         HttpSession session = request.getSession();
-        session.removeAttribute(Constants.PARAM_NAME_CORRECT_QUESTIONS);
-        session.removeAttribute(Constants.PARAM_NAME_CURRENT_QUESTION_NUMBER);
-        session.removeAttribute(Constants.PARAM_NAME_ALL_COUNT_QUESTIONS);
-        session.removeAttribute(Constants.PARAM_NAME_CURRENT_QUESTION);
-        session.removeAttribute(Constants.PARAM_NAME_CORRECT_QUESTIONS);
-        session.removeAttribute(Constants.PARAM_NAME_TEST);
+        session.removeAttribute(Constants.ATR_CORRECT_QUESTIONS);
+        session.removeAttribute(Constants.ATR_CURRENT_QUESTION_NUMBER);
+        session.removeAttribute(Constants.ATR_ALL_COUNT_QUESTIONS);
+        session.removeAttribute(Constants.ATR_CURRENT_QUESTION);
+        session.removeAttribute(Constants.ATR_TEST);
         return ConfigurationManager.getInstance().getProperty(ConfigurationManager.USER_PAGE_PATH);
     }
 }

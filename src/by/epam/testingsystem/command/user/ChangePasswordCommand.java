@@ -7,17 +7,21 @@ import by.epam.testingsystem.entity.User;
 import by.epam.testingsystem.util.BCrypt;
 import by.epam.testingsystem.util.ConfigurationManager;
 import by.epam.testingsystem.util.Constants;
+import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class ChangePasswordCommand implements ICommand {
+
+    private static final Logger LOG = Logger.getLogger(ChangePasswordCommand.class);
+
     @Override
     public String execute(HttpServletRequest request) {
         String page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.PERSONAL_ACCOUNT_PAGE_PATH);
         String oldPassword = request.getParameter(Constants.PARAM_NAME_OLD_PASSWORD);
         String password1 = request.getParameter(Constants.PARAM_NAME_PASSWORD);
         String password2 = request.getParameter(Constants.PARAM_NAME_REPEAT_PASSWORD);
-        User user = (User) request.getSession().getAttribute(Constants.PARAM_NAME_USER);
+        User user = (User) request.getSession().getAttribute(Constants.ATR_USER);
         if (oldPassword == null || oldPassword.isEmpty()) {
             request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.PERS_ACC_PASS_EMPTY_MESS);
         } else if (!BCrypt.checkpw(oldPassword, user.getPassword())) {
@@ -35,6 +39,7 @@ public class ChangePasswordCommand implements ICommand {
                 user.setPassword(hashPassword);
                 request.setAttribute(Constants.ATR_GOOD_MESSAGE, Constants.PERS_ACC_PASS_SUCCESS_MESS);
             } else {
+                LOG.error("Can't change password of user (" + user.getLogin() + ")");
                 request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.PERS_ACC_PASS_ERROR_MESS);
             }
         }

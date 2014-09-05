@@ -18,10 +18,10 @@ public class CompletedTestsCommand implements ICommand {
     public String execute(HttpServletRequest request) {
         ITestDao testDao = MysqlDaoFactory.getInstance().getTestDAO();
         HttpSession session = request.getSession();
-        User user = (User) session.getAttribute(Constants.PARAM_NAME_USER);
+        User user = (User) session.getAttribute(Constants.ATR_USER);
         List<Test> tests = testDao.readTestsByUser(user.getId());
-        session.setAttribute(Constants.PARAM_NAME_TESTS, tests);
-        session.setAttribute(Constants.PARAM_NAME_START_LIST, 0);
+        session.setAttribute(Constants.ATR_TESTS, tests);
+        session.setAttribute(Constants.ATR_START_LIST, 0);
         return ConfigurationManager.getInstance().getProperty(ConfigurationManager.SHOW_TESTS_PAGE_PATH);
     }
 }

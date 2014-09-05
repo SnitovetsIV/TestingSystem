@@ -25,13 +25,12 @@
         <br/>
 
         <form name="chooseQuestionsForm" action="controller" method="post">
-            <c:forEach var="question" items="${questionsTopics}" varStatus="status">
+            <c:forEach var="question" items="${questions}" varStatus="status">
                 <div class="check-box-input-q" style="height: auto">
-                    <input id="${question}" class="input-create-choose" type="checkbox" name="questionsTest"
+                    <input id="${question}" class="input-create-choose" type="checkbox" name="testQuestions"
                            value="${question.id}"/>
                     <label class="label-checkbox" for="${question}">
                         <br/>
-
                         <pre class="code-style">${question.description}</pre>
                         <ol>
                             <c:forEach var="answer" items="${question.answers}" varStatus="status">

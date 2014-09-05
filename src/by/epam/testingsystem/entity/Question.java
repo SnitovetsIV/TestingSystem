@@ -9,6 +9,9 @@ public class Question extends Entity {
     private String topic;
     private List<Answer> answers;
 
+    public Question() {
+    }
+
     public List<Answer> getAnswers() {
         return Collections.unmodifiableList(answers);
     }

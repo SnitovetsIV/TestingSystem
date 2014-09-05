@@ -13,10 +13,10 @@ public class ChooseTestSubjectCommand implements ICommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        String subjectName = request.getParameter(Constants.PARAM_NAME_SUBJECT_NAME);
+        String subjectName = request.getParameter(Constants.ATR_SUBJECT_NAME);
         ITestDao dao = MysqlDaoFactory.getInstance().getTestDAO();
         List<String> topics = dao.readTopicsBySubject(subjectName);
-        request.getSession().setAttribute(Constants.PARAM_NAME_TOPICS, topics);
+        request.getSession().setAttribute(Constants.ATR_TOPICS, topics);
         return ConfigurationManager.getInstance().getProperty(ConfigurationManager.CHOOSE_TEST_TOPICS_PAGE_PATH);
     }
 

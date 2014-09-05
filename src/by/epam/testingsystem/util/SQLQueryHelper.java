@@ -17,7 +17,8 @@ public final class SQLQueryHelper {
     public static final String SQL_UPDATE_USER_NAME_SURNAME = "UPDATE user SET name=?, surname=? WHERE user_id=? LIMIT 1";
     public static final String SQL_UPDATE_USER_PASSWORD = "UPDATE user SET password=? WHERE user_id=? LIMIT 1";
     public static final String SQL_READ_ALL_SUBJECTS = "SELECT name FROM subject";
-    public static final String SQL_READ_TESTS_BASIS = "SELECT test.test_id, test.name, test.description, subject.name AS 'subject'," +
+    public static final String SQL_READ_TESTS_BASIS = "SELECT test.test_id, test.name," +
+            " test.description, subject.name AS 'subject'," +
             " GROUP_CONCAT(DISTINCT topic.name SEPARATOR ', ') AS 'topics'," +
             " (SELECT GROUP_CONCAT(CONCAT(user_test.completed,'%') SEPARATOR ', ') FROM user_test" +
             " WHERE user_test.test_id=test.test_id AND user_test.user_id=?) AS 'stat' FROM test" +
@@ -69,6 +70,11 @@ public final class SQLQueryHelper {
     private SQLQueryHelper() {
     }
 
+    /**
+     * @param nameMethod - name of method
+     * @return string of query
+     * @throws DAOException - if name of method is incorrect
+     */
     public static String getQueryByNameMethod(String nameMethod) throws DAOException {
         switch (nameMethod) {
             case "findUserByLogin":
@@ -106,6 +112,12 @@ public final class SQLQueryHelper {
         }
     }
 
+    /**
+     * @param nameMethod - name of method
+     * @param statement  - statement which contained a result
+     * @return result of query
+     * @throws DAOException - if name of method is incorrect
+     */
     public static Object constructResult(String nameMethod, Statement statement) throws DAOException {
         Object result;
         switch (nameMethod) {
@@ -150,8 +162,8 @@ public final class SQLQueryHelper {
                     if (resultSet.next()) {
                         user = new User();
                         user.setId(resultSet.getInt(1));
-                        user.setName(resultSet.getString(2));
-                        user.setSurname(resultSet.getString(3));
+                        user.setName((resultSet.getString(2) != null) ? resultSet.getString(2) : "");
+                        user.setSurname((resultSet.getString(3) != null) ? resultSet.getString(3) : "");
                         user.setLogin(resultSet.getString(4));
                         user.setPassword(resultSet.getString(5));
                         user.setType(resultSet.getBoolean(6) ? UserType.ADMIN : UserType.USER);
@@ -171,7 +183,7 @@ public final class SQLQueryHelper {
                         Test test = new Test();
                         test.setId(resultSet.getInt(1));
                         test.setName(resultSet.getString(2));
-                        test.setDescription(resultSet.getString(3));
+                        test.setDescription((resultSet.getString(3) != null) ? resultSet.getString(3) : "");
                         test.setSubject(resultSet.getString(4));
                         test.setTopics(resultSet.getString(5));
                         test.setStat((resultSet.getString(6) != null) ? (resultSet.getString(6)) : "");
@@ -232,8 +244,8 @@ public final class SQLQueryHelper {
                         User concreteUser = new User();
                         concreteUser.setId(resultSet.getInt(1));
                         concreteUser.setLogin(resultSet.getString(2));
-                        concreteUser.setName(resultSet.getString(3));
-                        concreteUser.setSurname(resultSet.getString(4));
+                        concreteUser.setName((resultSet.getString(3) != null) ? resultSet.getString(3) : "");
+                        concreteUser.setSurname((resultSet.getString(4) != null) ? resultSet.getString(4) : "");
                         concreteUser.setType(UserType.USER);
                         concreteUser.setCountCompletedTests(resultSet.getInt(5));
                         concreteUser.setStatistic(resultSet.getDouble(6));

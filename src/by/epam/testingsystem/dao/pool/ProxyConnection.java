@@ -17,12 +17,11 @@ public class ProxyConnection implements Connection {
         return connection;
     }
 
-    //<editor-fold defaultstate="collapsed">
+    //<editor-fold defaultState="collapsed">
     @Override
     public Statement createStatement() throws SQLException {
         return connection.createStatement();
     }
-
 
     @Override
     public PreparedStatement prepareStatement(String s) throws SQLException {

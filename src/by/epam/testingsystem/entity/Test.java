@@ -12,6 +12,9 @@ public class Test extends Entity {
     private String topics;
     private String stat;
 
+    public Test() {
+    }
+
     public String getStat() {
         return stat;
     }

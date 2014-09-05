@@ -9,10 +9,6 @@ public abstract class Entity implements Serializable, Cloneable {
     public Entity() {
     }
 
-    public Entity(int id) {
-        this.id = id;
-    }
-
     public int getId() {
         return id;
     }

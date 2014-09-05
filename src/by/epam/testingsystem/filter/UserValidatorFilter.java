@@ -20,7 +20,7 @@ public class UserValidatorFilter implements Filter {
         if (commandName != null) {
             CommandType commandType = CommandType.valueOf(commandName);
             HttpServletRequest request = (HttpServletRequest) servletRequest;
-            User user = (User) request.getSession().getAttribute(Constants.PARAM_NAME_USER);
+            User user = (User) request.getSession().getAttribute(Constants.ATR_USER);
             boolean result = true;
             switch (commandType.getUserType()) {
                 case ADMIN:

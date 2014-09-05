@@ -8,7 +8,6 @@ import by.epam.testingsystem.util.ConfigurationManager;
 import by.epam.testingsystem.util.Constants;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class ChooseTestTopicsCommand implements ICommand {
@@ -24,8 +23,7 @@ public class ChooseTestTopicsCommand implements ICommand {
                 findTopics.append(s).append(",");
             }
             List<Question> questions = dao.readQuestionsByTopics(findTopics.toString());
-            HttpSession session = request.getSession();
-            session.setAttribute(Constants.PARAM_NAME_QUESTIONS_TOPICS, questions);
+            request.getSession().setAttribute(Constants.ATR_QUESTIONS, questions);
             page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.CREATE_TEST_PAGE_PATH);
         } else {
             request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.CREATE_TEST_NULL_TOPICS_MESS);

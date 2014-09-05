@@ -15,13 +15,13 @@ public class StartAddAnswersCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request) {
         String page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.ADD_ANSWERS_PAGE_PATH);
-        String description = request.getParameter(Constants.PARAM_NAME_QUESTION_DESCRIPTION);
+        String description = request.getParameter(Constants.ATR_QUESTION_DESCRIPTION);
         int countAnswers = Integer.parseInt(request.getParameter(Constants.PARAM_NAME_COUNT_ANSWERS));
         if ((description != null) && (!description.isEmpty())) {
             if ((MIN_COUNT_ANSWERS <= countAnswers) && (countAnswers <= MAX_COUNT_ANSWERS)) {
                 HttpSession session = request.getSession();
                 session.setAttribute(Constants.PARAM_NAME_COUNT_ANSWERS, countAnswers);
-                session.setAttribute(Constants.PARAM_NAME_QUESTION_DESCRIPTION, description);
+                session.setAttribute(Constants.ATR_QUESTION_DESCRIPTION, description);
             } else {
                 request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.CREATE_QUESTION_WRONG_COUNT_ANSWERS_MESS);
                 page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.CREATE_QUESTION_PAGE_PATH);

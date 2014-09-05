@@ -34,10 +34,9 @@
 <div class="header-text">
     <fmt:message key="labels.jsp.login.header" bundle="${bundleLabel}"/>
 </div>
-<div class="chose-lang">
+<div class="choose-lang">
     <form name="changeLangForm" action="controller" method="post">
         <input type="hidden" name="command" value="CHANGE_LANGUAGE"/>
-        <input type="hidden" name="page" value="${pageContext.request.servletPath}"/>
         <input class="dropdown-toggle" type="text">
 
         <div class="dropdown-text"><fmt:message key="labels.jsp.choose.language" bundle="${bundleLabel}"/></div>

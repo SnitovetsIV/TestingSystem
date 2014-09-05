@@ -23,13 +23,14 @@ public class RegistrationCommand implements ICommand {
         IUserDao userDao = MysqlDaoFactory.getInstance().getUserDAO();
         if (login == null || login.isEmpty()) {
             request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.REG_LOGIN_EMPTY_MESS);
-        } else if (userDao.isLoginExist(login)) {
+        } else if (userDao.isLoginExist(login.trim())) {
             request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.REG_LOGIN_EXIST_MESS);
         } else if (password1 == null || password1.isEmpty()) {
             request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.REG_PASS_EMPTY_MESS);
         } else if (!password1.equals(password2)) {
             request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.REG_PASS_NOT_MATCH_MESS);
         } else {
+            login = login.trim();
             String hashPassword = BCrypt.hashpw(password1, BCrypt.gensalt());
             if (userDao.createUser(login, hashPassword)) {
                 request.setAttribute(Constants.ATR_GOOD_MESSAGE, Constants.LOGIN_REG_SUCCESS_MESS);

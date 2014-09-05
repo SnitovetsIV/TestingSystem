@@ -33,8 +33,16 @@ public interface IUserDao extends IEntityDao {
      */
     boolean changePassword(String newPassword, int id);
 
+    /**
+     * @return list of users
+     * @see by.epam.testingsystem.entity.User
+     */
     List<User> findAllUsers();
 
+    /**
+     * @param id - id of user in database
+     * @return true if statistic was successfully cleared
+     */
     boolean clearUserTestStat(int id);
 
     /**

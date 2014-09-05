@@ -1,6 +1,5 @@
 package by.epam.testingsystem.tag;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
@@ -29,8 +28,6 @@ public class ButtonTag extends TagSupport {
         JspWriter out = pageContext.getOut();
         try {
             out.write("<form name=\"listPages\" action=\"controller\" method=\"post\">");
-            out.write("<input type=\"hidden\" name=\"page\" value=\"" +
-                    ((HttpServletRequest) pageContext.getRequest()).getServletPath() + "\"/>");
             out.write("<input type=\"hidden\" name=\"command\" value=\"SWITCH_PAGE\"/>");
             for (int i = 1; i <= (size / (step + 0.000000000000001) + 1); i++) {
                 out.write("<button class=\"page-button\" ");

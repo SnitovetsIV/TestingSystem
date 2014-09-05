@@ -12,13 +12,14 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class UserManagementCommand implements ICommand {
+
     @Override
     public String execute(HttpServletRequest request) {
         IUserDao dao = MysqlDaoFactory.getInstance().getUserDAO();
         List<User> users = dao.findAllUsers();
         HttpSession session = request.getSession();
-        session.setAttribute(Constants.PARAM_NAME_USERS, users);
-        session.setAttribute(Constants.PARAM_NAME_START_LIST, 0);
+        session.setAttribute(Constants.ATR_USERS, users);
+        session.setAttribute(Constants.ATR_START_LIST, 0);
         return ConfigurationManager.getInstance().getProperty(ConfigurationManager.USER_MANAGEMENT_PAGE_PATH);
     }
 }

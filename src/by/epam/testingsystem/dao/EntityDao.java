@@ -14,25 +14,9 @@ import java.util.List;
 
 public class EntityDao implements IEntityDao {
 
-    public static final String SQL_READ_QUESTIONS_BY_TOPICS_NAME = "SELECT question_id, description FROM question WHERE topic_id IN (SELECT topic_id FROM topic WHERE topic.name IN (";
     public static final String SQL_CREATE_NEW_TEST = "INSERT INTO test VALUES (NULL, ?, ?)";
     public static final String SQL_ASSOCIATE_QUESTIONS_TO_TEST = "INSERT INTO test_question VALUES";
     public static final String SQL_NEW_QUESTION_ADD = "(?, ?)";
-    public static final String SQL_READ_ANSWERS_BY_QUESTION_ID = "SELECT answer.answer_id, answer.description, question_answer.correct " +
-            "FROM answer JOIN question_answer ON question_answer.answer_id=answer.answer_id " +
-            "WHERE question_id=?";
-    public static final String SQL_READ_QUESTIONS_BY_TEST_ID = "SELECT question.question_id, description FROM question" +
-            " WHERE question.question_id IN (SELECT test_question.question_id FROM test_question WHERE test_id=?)";
-
-    public static final String SQL_READ_QUESTIONS_BY_TOPICS = "SELECT question.question_id, question.description," +
-            " topic.name, answer.answer_id, answer.description, question_answer.correct FROM question" +
-            " JOIN question_answer ON question.question_id=question_answer.question_id" +
-            " JOIN answer ON question_answer.answer_id=answer.answer_id" +
-            " JOIN topic ON topic.topic_id=question.topic_id" +
-            " WHERE topic.topic_id IN " +
-            " (SELECT topic.topic_id FROM topic WHERE LOCATE(topic.name,?))" +
-            " GROUP BY answer.answer_id";
-
     public static final String SQL_CREATE_QUESTION = "INSERT INTO question VALUES " +
             "(NULL,?,(SELECT topic_id FROM topic WHERE topic.name=? LIMIT 1))";
     public static final String SQL_ADD_QUESTION_ANSWER_DEPENDENCE = "INSERT INTO question_answer VALUES (?,?,?)";
@@ -74,11 +58,26 @@ public class EntityDao implements IEntityDao {
                 } else {
                     connection.rollback();
                 }
+            } else {
+                connection.rollback();
             }
-            connection.setAutoCommit(true);
         } catch (DAOException | SQLException e) {
             LOG.error(e);
+            if (connection != null) {
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOG.error(ex);
+                }
+            }
         } finally {
+            if (connection != null) {
+                try {
+                    connection.setAutoCommit(true);
+                } catch (SQLException e) {
+                    LOG.error(e);
+                }
+            }
             pool.closeStatement(statement);
             pool.putConnection(connection);
         }
