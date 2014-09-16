@@ -1,5 +1,10 @@
 package by.epam.testingsystem.exception;
 
+/**
+ * Exception in DAO
+ *
+ * @author Илья
+ */
 public class DAOException extends Exception {
 
     public DAOException() {

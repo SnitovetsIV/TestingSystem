@@ -1,4 +1,4 @@
-package by.epam.testingsystem.command.user;
+package by.epam.testingsystem.command.user.test;
 
 import by.epam.testingsystem.command.ICommand;
 import by.epam.testingsystem.dao.ITestDao;
@@ -12,6 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * This class implements a pattern command
+ * This class select subject
+ *
+ * @author Илья
+ */
 public class SelectSubjectCommand implements ICommand {
 
     @Override

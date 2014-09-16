@@ -1,4 +1,4 @@
-package by.epam.testingsystem.command.user;
+package by.epam.testingsystem.command.user.personal;
 
 import by.epam.testingsystem.command.ICommand;
 import by.epam.testingsystem.dao.IUserDao;
@@ -11,6 +11,12 @@ import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * This class implements a pattern command
+ * This class change user password
+ *
+ * @author Илья
+ */
 public class ChangePasswordCommand implements ICommand {
 
     private static final Logger LOG = Logger.getLogger(ChangePasswordCommand.class);

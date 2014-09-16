@@ -24,9 +24,10 @@
                         <fmt:message key="${badMessage}" bundle="${bundleMess}"/><br/>
                     </div>
                 </c:if>
+
                 <div class='input-field'>
                     <span class='icon username-icon fontawesome-user'></span>
-                    <input type="text" name="login" required value="" class="auth-input"
+                    <input type="text" name="login" required value="${login}" class="auth-input"
                            placeholder="<fmt:message key="labels.jsp.registration.login" bundle="${bundleLabel}"/>*:"><br/>
                 </div>
                 <div class='input-field'>
@@ -36,7 +37,7 @@
                 </div>
                 <div class='input-field'>
                     <span class='icon password-icon fontawesome-lock'></span>
-                    <input type="password" name="repeatPassword" required value="" class="auth-input"
+                    <input type="password" name="repeatPassword" required="" value="" class="auth-input"
                            placeholder="<fmt:message key="labels.jsp.registration.password.repeat" bundle="${bundleLabel}"/>*:"><br/>
                 </div>
                 <button class="big-button" name="command" value="REGISTRATION">

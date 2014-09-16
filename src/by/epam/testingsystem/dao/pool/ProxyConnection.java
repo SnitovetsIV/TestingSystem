@@ -5,14 +5,26 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
+/**
+ * Class-wrapper of Connection
+ *
+ * @author Илья
+ */
 public class ProxyConnection implements Connection {
 
+    /**
+     * Connection to database
+     */
     private final Connection connection;
 
     ProxyConnection(Connection connection) {
         this.connection = connection;
     }
 
+    /**
+     * @return wrapped connection
+     * @see java.sql.Connection
+     */
     public Connection getConnection() {
         return connection;
     }

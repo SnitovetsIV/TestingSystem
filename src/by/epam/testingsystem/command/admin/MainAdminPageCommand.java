@@ -7,6 +7,12 @@ import by.epam.testingsystem.util.Constants;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * This class implements a pattern command
+ * This class clear session
+ *
+ * @author Илья
+ */
 public class MainAdminPageCommand implements ICommand {
 
     @Override

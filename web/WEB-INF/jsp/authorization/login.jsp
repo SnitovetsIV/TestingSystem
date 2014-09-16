@@ -32,15 +32,15 @@
             </c:if>
             <div class="input-field">
                 <span class="icon username-icon fontawesome-user"></span>
-                <input type="text" class="auth-input"
-                       placeholder="<fmt:message key="labels.jsp.login.login" bundle="${bundleLabel}"/>"
-                       name="login" value="${login}" required/><br/>
+                <input type="text" class="auth-input" required
+                       placeholder="<fmt:message key="labels.jsp.login.login" bundle="${bundleLabel}"/>*"
+                       name="login" value="${login}"/><br/>
             </div>
             <div class="input-field">
                 <span class="icon password-icon fontawesome-lock"></span>
-                <input type="password" class="auth-input"
-                       placeholder="<fmt:message key="labels.jsp.login.password" bundle="${bundleLabel}"/> "
-                       name="password" required value=""><br/>
+                <input type="password" class="auth-input" required
+                       placeholder="<fmt:message key="labels.jsp.login.password" bundle="${bundleLabel}"/>*"
+                       name="password" value=""><br/>
             </div>
             <button class="big-button" name="command" value="LOGIN">
                 <fmt:message key="labels.jsp.login.enter" bundle="${bundleLabel}"/>

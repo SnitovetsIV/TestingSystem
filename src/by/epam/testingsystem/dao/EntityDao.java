@@ -12,18 +12,29 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
+/**
+ * Class helps proxy dao execute a very difficult queries
+ *
+ * @author Илья
+ */
 public class EntityDao implements IEntityDao {
 
-    public static final String SQL_CREATE_NEW_TEST = "INSERT INTO test VALUES (NULL, ?, ?)";
-    public static final String SQL_ASSOCIATE_QUESTIONS_TO_TEST = "INSERT INTO test_question VALUES";
-    public static final String SQL_NEW_QUESTION_ADD = "(?, ?)";
-    public static final String SQL_CREATE_QUESTION = "INSERT INTO question VALUES " +
+    private static final String SQL_CREATE_NEW_TEST = "INSERT INTO test VALUES (NULL, ?, ?)";
+    private static final String SQL_ASSOCIATE_QUESTIONS_TO_TEST = "INSERT INTO test_question VALUES";
+    private static final String SQL_NEW_QUESTION_ADD = "(?, ?)";
+    private static final String SQL_CREATE_QUESTION = "INSERT INTO question VALUES " +
             "(NULL,?,(SELECT topic_id FROM topic WHERE topic.name=? LIMIT 1))";
-    public static final String SQL_ADD_QUESTION_ANSWER_DEPENDENCE = "INSERT INTO question_answer VALUES (?,?,?)";
-    public static final String SQL_ANSWER_EXIST = "SELECT answer_id FROM answer WHERE description=?";
-    public static final String SQL_NEW_ANSWER = "INSERT INTO answer VALUES (NULL, ?)";
+    private static final String SQL_ADD_QUESTION_ANSWER_DEPENDENCE = "INSERT INTO question_answer VALUES (?,?,?)";
+    private static final String SQL_ANSWER_EXIST = "SELECT answer_id FROM answer WHERE description=?";
+    private static final String SQL_NEW_ANSWER = "INSERT INTO answer VALUES (NULL, ?)";
     private static final Logger LOG = Logger.getLogger(EntityDao.class);
 
+    /**
+     * @param testName        name of a new test
+     * @param testDescription description of a new test
+     * @param questionsId     ids questions that you want to add to the test
+     * @return true if test was successfully created
+     */
     @Override
     public boolean createNewTest(String testName, String testDescription, int[] questionsId) {
         boolean result = false;
@@ -84,6 +95,12 @@ public class EntityDao implements IEntityDao {
         return result;
     }
 
+    /**
+     * @param description a way of answering the question created
+     * @param topicName   name of topic
+     * @param answers     list of answers
+     * @return true if question was successfully created
+     */
     @Override
     public boolean createNewQuestion(String description, String topicName, List<Answer> answers) {
         boolean result = false;

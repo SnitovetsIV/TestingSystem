@@ -1,4 +1,4 @@
-package by.epam.testingsystem.command.admin;
+package by.epam.testingsystem.command.admin.question;
 
 import by.epam.testingsystem.command.ICommand;
 import by.epam.testingsystem.util.ConfigurationManager;
@@ -7,6 +7,12 @@ import by.epam.testingsystem.util.Constants;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * This class implements a pattern command
+ * This class start add answers to the question
+ *
+ * @author Илья
+ */
 public class StartAddAnswersCommand implements ICommand {
 
     public static final int MIN_COUNT_ANSWERS = 2;

@@ -2,22 +2,33 @@ package by.epam.testingsystem.command;
 
 import by.epam.testingsystem.entity.UserType;
 
+/**
+ * This enum contains enumeration of all commands
+ *
+ * @author Илья
+ */
 public enum CommandType {
 
-    //Commands for all
+    /**
+     * Commands for all
+     */
     RETURN_FROM_ERROR(UserType.ALL),
     TO_ERROR_PAGE(UserType.ALL),
     CHANGE_LANGUAGE(UserType.ALL),
     NO_COMMAND(UserType.ALL),
     LOGOUT(UserType.ALL),
 
-    //Commands for registration
+    /**
+     * Commands for registration
+     */
     LOGIN(UserType.ALL),
     START_REGISTRATION(UserType.ALL),
     REGISTRATION(UserType.ALL),
     BACK_REGISTRATION(UserType.ALL),
 
-    //Commands for user
+    /**
+     * Commands for user
+     */
     MAIN_PAGE(UserType.USER),
     PERSONAL_ACCOUNT(UserType.USER),
     SAVE_PERSONAL_DATA(UserType.USER),
@@ -31,7 +42,9 @@ public enum CommandType {
     ANSWER_QUESTION(UserType.USER),
     CANCEL_TAKE_TEST(UserType.USER),
 
-    //Commands for admin
+    /**
+     * Commands for admin
+     */
     MAIN_ADMIN_PAGE(UserType.ADMIN),
     START_CREATE_TEST(UserType.ADMIN),
     CHOOSE_SUBJECT(UserType.ADMIN),
@@ -48,7 +61,9 @@ public enum CommandType {
     CLEAR_STAT(UserType.ADMIN),
     SAVE_NEW_QUESTION(UserType.ADMIN);
 
-
+    /**
+     * This is instance which defines what users can execute this command
+     */
     private UserType userType;
 
     private CommandType(UserType userType) {

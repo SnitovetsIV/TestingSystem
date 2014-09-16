@@ -18,6 +18,16 @@
 </div>
 <div class="main-div">
     <div class="header-page"><fmt:message key="labels.jsp.usermanagement.header" bundle="${bundleLabel}"/></div>
+    <c:if test="${not empty badMessage}">
+        <div class="bad-message">
+            <fmt:message key="${badMessage}" bundle="${bundleMess}"/>
+        </div>
+    </c:if>
+    <c:if test="${not empty goodMessage}">
+        <div class="good-message">
+            <fmt:message key="${goodMessage}" bundle="${bundleMess}"/>
+        </div>
+    </c:if>
     <c:set var="listStep" scope="session" value="15"/>
     <div class="simpleTable">
         <table width="100%">

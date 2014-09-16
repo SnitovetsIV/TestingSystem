@@ -4,6 +4,13 @@
     <entry_points version="2.0" />
   </component>
   <component name="IdProvider" IDEtalkID="AAE800FA8435193D13F905B3D4DF8F35" />
+  <component name="J2DDesignerComponent">
+    <graphics>
+      <graphicsVar>graphics</graphicsVar>
+      <widthVar>width</widthVar>
+      <heightVar>height</heightVar>
+    </graphics>
+  </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Documents" />
     <option name="OPTION_SCOPE" value="protected" />

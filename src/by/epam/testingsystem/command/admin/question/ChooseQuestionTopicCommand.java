@@ -1,4 +1,4 @@
-package by.epam.testingsystem.command.admin;
+package by.epam.testingsystem.command.admin.question;
 
 import by.epam.testingsystem.command.ICommand;
 import by.epam.testingsystem.util.ConfigurationManager;
@@ -6,6 +6,12 @@ import by.epam.testingsystem.util.Constants;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * This class implements a pattern command
+ * This class choose question topic
+ *
+ * @author Илья
+ */
 public class ChooseQuestionTopicCommand implements ICommand {
 
     @Override

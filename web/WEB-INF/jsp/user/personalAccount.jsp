@@ -55,19 +55,19 @@
                 <div class='input-field'>
                     <span class='icon password-icon fontawesome-lock'></span>
                     <input type="password" class="big-input"
-                           placeholder="<fmt:message key="labels.jsp.personalaccount.change.password.oldpassword" bundle="${bundleLabel}"/> "
+                           placeholder="<fmt:message key="labels.jsp.personalaccount.change.password.oldpassword" bundle="${bundleLabel}"/>*"
                            name="oldPassword" required value=""><br/>
                 </div>
                 <div class='input-field'>
                     <span class='icon password-icon fontawesome-lock'></span>
                     <input type="password" class="big-input"
-                           placeholder="<fmt:message key="labels.jsp.personalaccount.change.password.newpassword" bundle="${bundleLabel}"/> "
+                           placeholder="<fmt:message key="labels.jsp.personalaccount.change.password.newpassword" bundle="${bundleLabel}"/>*"
                            name="password" required value=""><br/>
                 </div>
                 <div class='input-field'>
                     <span class='icon password-icon fontawesome-lock'></span>
                     <input type="password" class="big-input"
-                           placeholder="<fmt:message key="labels.jsp.personalaccount.change.password.repeatpassword" bundle="${bundleLabel}"/> "
+                           placeholder="<fmt:message key="labels.jsp.personalaccount.change.password.repeatpassword" bundle="${bundleLabel}"/>*"
                            name="repeatPassword" required value=""><br/>
                 </div>
                 <button name="command" value="CHANGE_PASSWORD" class="big-button">

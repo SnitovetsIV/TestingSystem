@@ -1,4 +1,4 @@
-package by.epam.testingsystem.command.user;
+package by.epam.testingsystem.command.user.test;
 
 import by.epam.testingsystem.command.ICommand;
 import by.epam.testingsystem.util.ConfigurationManager;
@@ -7,6 +7,12 @@ import by.epam.testingsystem.util.Constants;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * This class implements a pattern command
+ * This class clear session and cancel take test
+ *
+ * @author Илья
+ */
 public class CancelTakeTestCommand implements ICommand {
 
     @Override

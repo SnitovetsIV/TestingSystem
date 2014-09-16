@@ -7,6 +7,11 @@ import by.epam.testingsystem.util.Constants;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * This class implements a pattern command
+ *
+ * @author Илья
+ */
 public class NoCommand implements ICommand {
 
     @Override

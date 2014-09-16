@@ -10,6 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Locale;
 
+/**
+ * This class implements a pattern command
+ * This class provides the user exits
+ *
+ * @author Илья
+ */
 public class LogoutCommand implements ICommand {
 
     private static final Logger LOG = Logger.getLogger(LogoutCommand.class);

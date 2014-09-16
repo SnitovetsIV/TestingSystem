@@ -27,9 +27,11 @@
         <form name="chooseQuestionsForm" action="controller" method="post">
             <c:forEach var="question" items="${questions}" varStatus="status">
                 <div class="check-box-input-q" style="height: auto">
-                    <input id="${question}" class="input-create-choose" type="checkbox" name="testQuestions"
+                    <input id="${question.id}" class="input-create-choose" type="checkbox" name="testQuestions"
                            value="${question.id}"/>
-                    <label class="label-checkbox" for="${question}">
+                    <label class="label-checkbox" for="${question.id}">
+                        <br/>
+                        <fmt:message key="labels.jsp.addquestions.topic" bundle="${bundleLabel}"/>: ${question.topic}
                         <br/>
                         <pre class="code-style">${question.description}</pre>
                         <ol>

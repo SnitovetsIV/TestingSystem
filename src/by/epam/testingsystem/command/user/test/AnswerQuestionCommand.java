@@ -1,4 +1,4 @@
-package by.epam.testingsystem.command.user;
+package by.epam.testingsystem.command.user.test;
 
 import by.epam.testingsystem.command.ICommand;
 import by.epam.testingsystem.dao.ITestDao;
@@ -13,6 +13,12 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * This class implements a pattern command
+ * This class answer question
+ *
+ * @author Илья
+ */
 public class AnswerQuestionCommand implements ICommand {
 
     private static final Logger LOG = Logger.getLogger(AnswerQuestionCommand.class);
@@ -50,6 +56,7 @@ public class AnswerQuestionCommand implements ICommand {
                 session.removeAttribute(Constants.ATR_CURRENT_QUESTION_NUMBER);
                 if (dao.saveUserCompleteTest(user.getId(), test.getId(), result)) {
                     request.setAttribute(Constants.PARAM_NAME_RESULT_TEST, result + PERCENT_STRING);
+                    LOG.info("Test (" + test.getName() + ") was completed by user (" + user.getLogin() + ") on " + result + "%.");
                 } else {
                     LOG.error("Can't save user test result.");
                     request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.USER_ERROR_SAVE_RESULT_MESS);

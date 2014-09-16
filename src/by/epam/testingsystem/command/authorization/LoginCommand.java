@@ -11,6 +11,12 @@ import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * This class implements a pattern command
+ * This class authorizes users
+ *
+ * @author Илья
+ */
 public class LoginCommand implements ICommand {
 
     private static final Logger LOG = Logger.getLogger(LoginCommand.class);

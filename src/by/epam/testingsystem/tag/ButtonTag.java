@@ -30,10 +30,12 @@ public class ButtonTag extends TagSupport {
             out.write("<form name=\"listPages\" action=\"controller\" method=\"post\">");
             out.write("<input type=\"hidden\" name=\"command\" value=\"SWITCH_PAGE\"/>");
             for (int i = 1; i <= (size / (step + 0.000000000000001) + 1); i++) {
-                out.write("<button class=\"page-button\" ");
+                out.write("<button ");
                 int currentPos = (i - 1) * step;
                 if (position == currentPos) {
-                    out.write("disabled style=\"color: #000000; background-color: #FFFF00;\" ");
+                    out.write("disabled class=\"current-page-button\" ");
+                } else {
+                    out.write("class=\"page-button\" ");
                 }
                 out.write("name=\"startList\" value=\"" + currentPos + "\">");
                 out.write(i + "</button>");

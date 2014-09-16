@@ -5,6 +5,9 @@ import by.epam.testingsystem.util.Constants;
 import javax.servlet.*;
 import java.io.IOException;
 
+/**
+ * @author Илья
+ */
 public class CharacterEncodingFilter implements Filter {
 
     private String code;
@@ -15,7 +18,8 @@ public class CharacterEncodingFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
+                         FilterChain filterChain) throws IOException, ServletException {
         String codeRequest = servletRequest.getCharacterEncoding();
         if (code != null && !code.equalsIgnoreCase(codeRequest)) {
             servletRequest.setCharacterEncoding(code);

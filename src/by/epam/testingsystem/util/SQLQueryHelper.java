@@ -10,14 +10,20 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class helps proxy dao execute queries and return results
+ *
+ * @author Илья
+ */
 public final class SQLQueryHelper {
 
-    //user
-
-    public static final String SQL_UPDATE_USER_NAME_SURNAME = "UPDATE user SET name=?, surname=? WHERE user_id=? LIMIT 1";
-    public static final String SQL_UPDATE_USER_PASSWORD = "UPDATE user SET password=? WHERE user_id=? LIMIT 1";
-    public static final String SQL_READ_ALL_SUBJECTS = "SELECT name FROM subject";
-    public static final String SQL_READ_TESTS_BASIS = "SELECT test.test_id, test.name," +
+    /**
+     * User queries
+     */
+    private static final String SQL_UPDATE_USER_NAME_SURNAME = "UPDATE user SET name=?, surname=? WHERE user_id=? LIMIT 1";
+    private static final String SQL_UPDATE_USER_PASSWORD = "UPDATE user SET password=? WHERE user_id=? LIMIT 1";
+    private static final String SQL_READ_ALL_SUBJECTS = "SELECT name FROM subject";
+    private static final String SQL_READ_TESTS_BASIS = "SELECT test.test_id, test.name," +
             " test.description, subject.name AS 'subject'," +
             " GROUP_CONCAT(DISTINCT topic.name SEPARATOR ', ') AS 'topics'," +
             " (SELECT GROUP_CONCAT(CONCAT(user_test.completed,'%') SEPARATOR ', ') FROM user_test" +
@@ -26,43 +32,45 @@ public final class SQLQueryHelper {
             " LEFT JOIN question ON test_question.question_id=question.question_id" +
             " LEFT JOIN topic ON question.topic_id=topic.topic_id" +
             " LEFT JOIN subject ON subject.subject_id=topic.subject_id";
-    public static final String SQL_READ_ALL_TESTS = SQL_READ_TESTS_BASIS + " GROUP BY test.test_id";
-    public static final String SQL_READ_TESTS_BY_SUBJECT = SQL_READ_TESTS_BASIS + " WHERE subject.name=? GROUP BY test.test_id";
-    public static final String SQL_READ_TESTS_BY_USER = SQL_READ_TESTS_BASIS + " GROUP BY test.test_id HAVING stat IS NOT NULL";
-    public static final String SQL_SAVE_TEST_RESULT = "INSERT INTO user_test(id, user_id, test_id, completed)" +
+    private static final String SQL_READ_ALL_TESTS = SQL_READ_TESTS_BASIS + " GROUP BY test.test_id";
+    private static final String SQL_READ_TESTS_BY_SUBJECT = SQL_READ_TESTS_BASIS + " WHERE subject.name=? GROUP BY test.test_id";
+    private static final String SQL_READ_TESTS_BY_USER = SQL_READ_TESTS_BASIS + " GROUP BY test.test_id HAVING stat IS NOT NULL";
+    private static final String SQL_SAVE_TEST_RESULT = "INSERT INTO user_test(user_test_id, user_id, test_id, completed)" +
             " VALUES (null,?,?,?)";
-    public static final String SQL_READ_QUESTION_BASIS = "SELECT question.question_id, question.description," +
+    private static final String SQL_READ_QUESTION_BASIS = "SELECT question.question_id, question.description," +
             " topic.name, answer.answer_id, answer.description, question_answer.correct FROM question" +
             " JOIN question_answer ON question.question_id=question_answer.question_id" +
             " JOIN answer ON question_answer.answer_id=answer.answer_id" +
             " JOIN topic ON topic.topic_id=question.topic_id";
-    public static final String SQL_READ_QUESTIONS_BY_TEST_ID = SQL_READ_QUESTION_BASIS +
+    private static final String SQL_READ_QUESTIONS_BY_TEST_ID = SQL_READ_QUESTION_BASIS +
             " WHERE question.question_id IN (SELECT test_question.question_id FROM test_question WHERE test_id=?)" +
             " ORDER BY question.question_id";
 
-    //admin
-
-    public static final String SQL_READ_QUESTIONS_BY_TOPICS = SQL_READ_QUESTION_BASIS +
+    /**
+     * Admin queries
+     */
+    private static final String SQL_READ_QUESTIONS_BY_TOPICS = SQL_READ_QUESTION_BASIS +
             " WHERE topic.topic_id IN (SELECT topic.topic_id FROM topic WHERE LOCATE(topic.name,?)>0)" +
             " ORDER BY question.question_id";
-    public static final String SQL_READ_ALL_USERS = "SELECT user.user_id, user.login, user.name, user.surname," +
-            " COUNT(DISTINCT user_test.id) AS 'count test', " +
+    private static final String SQL_READ_ALL_USERS = "SELECT user.user_id, user.login, user.name, user.surname," +
+            " COUNT(DISTINCT user_test.user_test_id) AS 'count test', " +
             " ROUND(SUM(user_test.completed)/COUNT(question.question_id),1) AS 'stat'" +
             " FROM user" +
             " LEFT JOIN user_test ON user_test.user_id=user.user_id " +
             " LEFT JOIN test_question ON test_question.test_id=user_test.test_id" +
             " LEFT JOIN question ON question.question_id=test_question.question_id" +
             " WHERE user.admin=0 GROUP BY user.user_id";
-    public static final String SQL_CLEAR_USER_TEST_STAT = "DELETE FROM user_test WHERE user_id=?";
+    private static final String SQL_CLEAR_USER_TEST_STAT = "DELETE FROM user_test WHERE user_id=?";
 
-    //all
-
-    public static final String SQL_READ_TOPICS_BY_SUBJECT = "SELECT name FROM topic " +
+    /**
+     * General queries
+     */
+    private static final String SQL_READ_TOPICS_BY_SUBJECT = "SELECT name FROM topic " +
             "WHERE subject_id=(SELECT subject_id FROM subject WHERE subject.name=? LIMIT 1)";
-    public static final String SQL_CREATE_USER = "INSERT INTO user(user_id, name, surname, login, password, admin)" +
+    private static final String SQL_CREATE_USER = "INSERT INTO user(user_id, name, surname, login, password, admin)" +
             " VALUES (null,null,null,?,?,false)";
-    public static final String SQL_IS_LOGIN_EXIST = "SELECT user_id FROM user WHERE login=? LIMIT 1";
-    public static final String SQL_FIND_USER_BY_LOGIN = "SELECT user.user_id, user.name, user.surname, " +
+    private static final String SQL_IS_LOGIN_EXIST = "SELECT user_id FROM user WHERE login=? LIMIT 1";
+    private static final String SQL_FIND_USER_BY_LOGIN = "SELECT user.user_id, user.name, user.surname, " +
             " user.login, user.password,  user.admin  FROM user WHERE login=? LIMIT 1";
 
     private static final Logger LOG = Logger.getLogger(SQLQueryHelper.class);
@@ -222,8 +230,8 @@ public final class SQLQueryHelper {
                             question.setDescription(resultSet.getString(2));
                             question.setTopic(resultSet.getString(3));
                             answers = new ArrayList<>();
-                            question.setAnswers(answers);
                             questions.add(question);
+                            question.setAnswers(answers);
                         }
                         Answer answer = new Answer();
                         answer.setId(resultSet.getInt(4));

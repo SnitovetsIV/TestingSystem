@@ -1,6 +1,7 @@
-package by.epam.testingsystem.command.user;
+package by.epam.testingsystem.command.user.test;
 
 import by.epam.testingsystem.command.ICommand;
+import by.epam.testingsystem.command.user.personal.ChangePasswordCommand;
 import by.epam.testingsystem.dao.ITestDao;
 import by.epam.testingsystem.dao.mysql.MysqlDaoFactory;
 import by.epam.testingsystem.entity.Question;
@@ -13,6 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * This class implements a pattern command
+ * This class start take test
+ *
+ * @author Илья
+ */
 public class TakeTestCommand implements ICommand {
 
     private static final Logger LOG = Logger.getLogger(ChangePasswordCommand.class);

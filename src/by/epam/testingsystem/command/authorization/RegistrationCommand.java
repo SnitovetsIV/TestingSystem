@@ -10,6 +10,12 @@ import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * This class implements a pattern command
+ * This class performs user registration
+ *
+ * @author Илья
+ */
 public class RegistrationCommand implements ICommand {
 
     private static final Logger LOG = Logger.getLogger(RegistrationCommand.class);
@@ -27,8 +33,10 @@ public class RegistrationCommand implements ICommand {
             request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.REG_LOGIN_EXIST_MESS);
         } else if (password1 == null || password1.isEmpty()) {
             request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.REG_PASS_EMPTY_MESS);
+            request.setAttribute(Constants.PARAM_NAME_LOGIN, login);
         } else if (!password1.equals(password2)) {
             request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.REG_PASS_NOT_MATCH_MESS);
+            request.setAttribute(Constants.PARAM_NAME_LOGIN, login);
         } else {
             login = login.trim();
             String hashPassword = BCrypt.hashpw(password1, BCrypt.gensalt());
@@ -36,6 +44,7 @@ public class RegistrationCommand implements ICommand {
                 request.setAttribute(Constants.ATR_GOOD_MESSAGE, Constants.LOGIN_REG_SUCCESS_MESS);
                 page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.LOGIN_PAGE_PATH);
                 request.setAttribute(Constants.PARAM_NAME_LOGIN, login);
+                LOG.info("User is created: " + login);
             } else {
                 LOG.error("Can't create new user.");
                 request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.REG_ERROR_MESS);

@@ -28,7 +28,9 @@
         </div>
     </c:if>
     <c:if test="${not empty resultTest}">
-        <div class="result-test">
+        <div class="good-message">
+            <br/>
+            <br/>
             <fmt:message key="labels.jsp.userpage.beforeresult" bundle="${bundleLabel}"/> ${resultTest}
         </div>
     </c:if>

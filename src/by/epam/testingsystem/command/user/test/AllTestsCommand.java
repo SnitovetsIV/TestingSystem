@@ -1,4 +1,4 @@
-package by.epam.testingsystem.command.user;
+package by.epam.testingsystem.command.user.test;
 
 import by.epam.testingsystem.command.ICommand;
 import by.epam.testingsystem.dao.ITestDao;
@@ -12,16 +12,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-public class CompletedTestsCommand implements ICommand {
+/**
+ * This class implements a pattern command
+ * This class show all tests
+ *
+ * @author Илья
+ */
+public class AllTestsCommand implements ICommand {
 
     @Override
     public String execute(HttpServletRequest request) {
+        String page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.SHOW_TESTS_PAGE_PATH);
         ITestDao testDao = MysqlDaoFactory.getInstance().getTestDAO();
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute(Constants.ATR_USER);
-        List<Test> tests = testDao.readTestsByUser(user.getId());
+        List<Test> tests = testDao.readAllTests(user.getId());
         session.setAttribute(Constants.ATR_TESTS, tests);
         session.setAttribute(Constants.ATR_START_LIST, 0);
-        return ConfigurationManager.getInstance().getProperty(ConfigurationManager.SHOW_TESTS_PAGE_PATH);
+        return page;
     }
 }

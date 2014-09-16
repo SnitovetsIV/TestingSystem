@@ -1,4 +1,4 @@
-package by.epam.testingsystem.command.admin;
+package by.epam.testingsystem.command.admin.test;
 
 import by.epam.testingsystem.command.ICommand;
 import by.epam.testingsystem.dao.ITestDao;
@@ -10,6 +10,12 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * This class implements a pattern command
+ * This class save new test
+ *
+ * @author Илья
+ */
 public class SaveNewTestCommand implements ICommand {
 
     private static final Logger LOG = Logger.getLogger(SaveNewTestCommand.class);
@@ -30,6 +36,7 @@ public class SaveNewTestCommand implements ICommand {
             if (dao.createNewTest(name, description, qestId)) {
                 LOG.info("Test (" + name + ") was created.");
                 page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.ADMIN_PAGE_PATH);
+                request.setAttribute(Constants.ATR_GOOD_MESSAGE, Constants.CREATE_TEST_SUCCESS_MESS);
             } else {
                 LOG.error("Can't create new test.");
                 request.setAttribute(Constants.ATR_BAD_MESSAGE, Constants.CREATE_TEST_ERROR_MESS);

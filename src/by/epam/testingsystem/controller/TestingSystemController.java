@@ -12,6 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * This class implements the pattern MVC. This is Servlet which handles requests
+ *
+ * @author Илья
+ */
 public class TestingSystemController extends HttpServlet {
 
     @Override
@@ -24,6 +29,12 @@ public class TestingSystemController extends HttpServlet {
         processRequest(req, resp);
     }
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     *
+     * @param req  servlet request
+     * @param resp servlet response
+     */
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String page;
         ICommand command = CommandFactory.getInstance().getCommand(req);

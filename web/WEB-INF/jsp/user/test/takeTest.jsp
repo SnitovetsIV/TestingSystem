@@ -34,9 +34,9 @@
         <div class="check-box-input" style="height: auto">
             <form name="takeTestForm" action="controller" method="post">
                 <c:forEach var="answer" items="${question.answers}" varStatus="status">
-                    <input id="answers" type="checkbox"
+                    <input id="${answer.id}" type="checkbox"
                            name="answers" value="${answer.id}"/>
-                    <label class="label-checkbox" for="answers">${answer.description} -
+                    <label class="label-checkbox" for="${answer.id}">${answer.description} -
                         (${answer.isCorrect()})<br/></label>
                 </c:forEach>
                 <button class="big-button" name="command" value="ANSWER_QUESTION">

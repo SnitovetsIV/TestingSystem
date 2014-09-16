@@ -1,4 +1,4 @@
-package by.epam.testingsystem.command.admin;
+package by.epam.testingsystem.command.admin.test;
 
 import by.epam.testingsystem.command.ICommand;
 import by.epam.testingsystem.util.ConfigurationManager;
@@ -7,6 +7,12 @@ import by.epam.testingsystem.util.Constants;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * This class implements a pattern command
+ * This class start add questions to the test
+ *
+ * @author Илья
+ */
 public class StartAddQuestionsCommand implements ICommand {
 
     @Override

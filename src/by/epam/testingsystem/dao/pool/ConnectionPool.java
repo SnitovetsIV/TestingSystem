@@ -11,6 +11,11 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * This class creates and closes a connection with database
+ *
+ * @author Илья
+ */
 public class ConnectionPool {
 
     private static final Logger LOG = Logger.getLogger(ConnectionPool.class);
@@ -41,8 +46,12 @@ public class ConnectionPool {
             LOG.error("Interrupt creating pool of connection", e);
             throw new ExceptionInInitializerError(e);
         }
+        LOG.info("Pool of connections initialised");
     }
 
+    /**
+     * @return singleton instance of ConnectionPool
+     */
     public static ConnectionPool getInstance() {
         if (instance == null) {
             lock.lock();
@@ -79,6 +88,7 @@ public class ConnectionPool {
                 lock.unlock();
             }
         }
+        LOG.info("Pool of connections released");
     }
 
     /**

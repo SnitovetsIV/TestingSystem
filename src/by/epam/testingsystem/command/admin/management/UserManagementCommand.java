@@ -1,4 +1,4 @@
-package by.epam.testingsystem.command.admin;
+package by.epam.testingsystem.command.admin.management;
 
 import by.epam.testingsystem.command.ICommand;
 import by.epam.testingsystem.dao.IUserDao;
@@ -11,6 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * This class implements a pattern command
+ * This class show all users with statistics
+ *
+ * @author Илья
+ */
 public class UserManagementCommand implements ICommand {
 
     @Override

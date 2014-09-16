@@ -1,4 +1,4 @@
-package by.epam.testingsystem.command.admin;
+package by.epam.testingsystem.command.admin.question;
 
 import by.epam.testingsystem.command.ICommand;
 import by.epam.testingsystem.dao.ITestDao;
@@ -10,6 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * This class implements a pattern command
+ * This class cancel create question and clear session
+ *
+ * @author Илья
+ */
 public class ChooseQuestionSubjectCommand implements ICommand {
 
     @Override

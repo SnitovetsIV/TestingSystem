@@ -5,6 +5,12 @@ import by.epam.testingsystem.util.Constants;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * This class implements a pattern command
+ * This class switch page of big list
+ *
+ * @author Илья
+ */
 public class SwitchPageCommand implements ICommand {
 
     @Override

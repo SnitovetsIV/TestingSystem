@@ -5,6 +5,12 @@ import by.epam.testingsystem.util.ConfigurationManager;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * This class implements a pattern command
+ * This class start registration
+ *
+ * @author Илья
+ */
 public class StartRegistrationCommand implements ICommand {
 
     @Override

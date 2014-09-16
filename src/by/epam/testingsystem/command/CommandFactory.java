@@ -1,13 +1,28 @@
 package by.epam.testingsystem.command;
 
-import by.epam.testingsystem.command.admin.*;
+import by.epam.testingsystem.command.admin.MainAdminPageCommand;
+import by.epam.testingsystem.command.admin.management.ClearUserStatCommand;
+import by.epam.testingsystem.command.admin.management.UserManagementCommand;
+import by.epam.testingsystem.command.admin.question.*;
+import by.epam.testingsystem.command.admin.test.*;
 import by.epam.testingsystem.command.authorization.*;
-import by.epam.testingsystem.command.user.*;
+import by.epam.testingsystem.command.user.MainPageCommand;
+import by.epam.testingsystem.command.user.personal.ChangePasswordCommand;
+import by.epam.testingsystem.command.user.personal.PersonalAccountCommand;
+import by.epam.testingsystem.command.user.personal.SavePersonalDataCommand;
+import by.epam.testingsystem.command.user.test.*;
 import by.epam.testingsystem.util.Constants;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 
+/**
+ * This is class which implements a pattern factory
+ *
+ * @author Илья
+ * @see by.epam.testingsystem.command.ICommand
+ * @see by.epam.testingsystem.command.CommandType
+ */
 public class CommandFactory {
 
     private final HashMap<CommandType, ICommand> allCommands;
@@ -69,7 +84,6 @@ public class CommandFactory {
      * @param request
      * @return Command by name of command in request
      */
-
     public ICommand getCommand(HttpServletRequest request) {
         String action = (String) request.getAttribute(Constants.PARAM_NAME_COMMAND);
         CommandType type = CommandType.valueOf(action);

@@ -12,6 +12,11 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.sql.PreparedStatement;
 
+/**
+ * Proxy dao
+ *
+ * @author Илья
+ */
 class MysqlDaoProxy implements InvocationHandler {
 
     private static final Logger LOG = Logger.getLogger(MysqlDaoProxy.class);
@@ -23,11 +28,23 @@ class MysqlDaoProxy implements InvocationHandler {
         this.dao = dao;
     }
 
+    /**
+     * @param dao
+     * @param interf
+     * @return
+     */
     public static IEntityDao newInstance(IEntityDao dao, Class<?>... interf) {
         return (IEntityDao) Proxy.newProxyInstance(IEntityDao.class.getClassLoader(), interf,
                 new MysqlDaoProxy(dao));
     }
 
+    /**
+     * @param o       the object
+     * @param method  invoked method
+     * @param objects parameters
+     * @return result of method
+     * @throws Throwable possible exceptions
+     */
     @Override
     public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
         Class<?> declaringClass = method.getDeclaringClass();

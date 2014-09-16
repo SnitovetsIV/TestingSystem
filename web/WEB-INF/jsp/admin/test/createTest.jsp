@@ -12,7 +12,7 @@
     <c:import url="../../common/header.jsp" charEncoding="utf-8"/>
 </div>
 <div class="menu">
-<c:import url="../../common/adminMenu.jsp" charEncoding="utf-8"/>
+    <c:import url="../../common/adminMenu.jsp" charEncoding="utf-8"/>
 </div>
 <div class="main-div">
     <div class="header-page"><fmt:message key="labels.jsp.createtest.header" bundle="${bundleLabel}"/></div>
@@ -40,12 +40,12 @@
                               bundle="${bundleLabel}"/>"></textarea>
             </div>
             <button class="big-button" name="command" value="START_ADD_QUESTIONS">
-            <fmt:message key="labels.jsp.createtest.questions.add" bundle="${bundleLabel}"/>
+                <fmt:message key="labels.jsp.createtest.questions.add" bundle="${bundleLabel}"/>
             </button>
         </form>
         <form name="cancelCreateForm" action="controller" method="post" autocomplete="off">
             <button class="big-button" name="command" value="CANCEL_CREATE_TEST">
-            <fmt:message key="labels.jsp.createtest.cancel" bundle="${bundleLabel}"/>
+                <fmt:message key="labels.jsp.createtest.cancel" bundle="${bundleLabel}"/>
             </button>
         </form>
     </div>

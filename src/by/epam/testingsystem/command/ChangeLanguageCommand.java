@@ -7,6 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Locale;
 
+/**
+ * This class implements a pattern command
+ * This class change language of pages
+ *
+ * @author Илья
+ */
 public class ChangeLanguageCommand implements ICommand {
 
     @Override

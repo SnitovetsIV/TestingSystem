@@ -4,6 +4,11 @@ import by.epam.testingsystem.util.ConfigurationManager;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * This class implements a pattern command
+ *
+ * @author Илья
+ */
 public class ToErrorPageCommand implements ICommand {
 
     @Override
