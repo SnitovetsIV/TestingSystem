@@ -54,11 +54,9 @@ public final class SQLQueryHelper {
             " ORDER BY question.topic_id ASC";
     private static final String SQL_READ_ALL_USERS = "SELECT user.user_id, user.login, user.name, user.surname," +
             " COUNT(DISTINCT user_test.user_test_id) AS 'count test', " +
-            " ROUND(SUM(user_test.completed)/COUNT(question.question_id),1) AS 'stat'" +
+            " ROUND(SUM(user_test.completed)/COUNT(user_test.test_id),1) AS 'stat'" +
             " FROM user" +
             " LEFT JOIN user_test ON user_test.user_id=user.user_id " +
-            " LEFT JOIN test_question ON test_question.test_id=user_test.test_id" +
-            " LEFT JOIN question ON question.question_id=test_question.question_id" +
             " WHERE user.admin=0 GROUP BY user.user_id";
     private static final String SQL_CLEAR_USER_TEST_STAT = "DELETE FROM user_test WHERE user_id=?";
 
@@ -66,7 +64,7 @@ public final class SQLQueryHelper {
      * General queries
      */
     private static final String SQL_READ_TOPICS_BY_SUBJECT = "SELECT name FROM topic " +
-            "WHERE subject_id=(SELECT subject_id FROM subject WHERE subject.name=? LIMIT 1)";
+            " WHERE subject_id=(SELECT subject_id FROM subject WHERE subject.name=? LIMIT 1)";
     private static final String SQL_CREATE_USER = "INSERT INTO user(user_id, name, surname, login, password, admin)" +
             " VALUES (null,null,null,?,?,false)";
     private static final String SQL_IS_LOGIN_EXIST = "SELECT user_id FROM user WHERE login=? LIMIT 1";

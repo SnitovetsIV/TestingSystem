@@ -1,6 +1,7 @@
 package by.epam.testingsystem.command.admin.question;
 
 import by.epam.testingsystem.command.ICommand;
+import by.epam.testingsystem.util.CommandHelper;
 import by.epam.testingsystem.util.ConfigurationManager;
 import by.epam.testingsystem.util.Constants;
 
@@ -26,6 +27,7 @@ public class StartAddAnswersCommand implements ICommand {
         if ((description != null) && (!description.isEmpty())) {
             if ((MIN_COUNT_ANSWERS <= countAnswers) && (countAnswers <= MAX_COUNT_ANSWERS)) {
                 HttpSession session = request.getSession();
+                description = CommandHelper.replaceAllHtmlSpecialCharacters(description);
                 session.setAttribute(Constants.PARAM_NAME_COUNT_ANSWERS, countAnswers);
                 session.setAttribute(Constants.ATR_QUESTION_DESCRIPTION, description);
             } else {

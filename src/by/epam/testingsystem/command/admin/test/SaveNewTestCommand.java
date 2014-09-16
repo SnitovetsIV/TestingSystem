@@ -3,6 +3,7 @@ package by.epam.testingsystem.command.admin.test;
 import by.epam.testingsystem.command.ICommand;
 import by.epam.testingsystem.dao.ITestDao;
 import by.epam.testingsystem.dao.mysql.MysqlDaoFactory;
+import by.epam.testingsystem.util.CommandHelper;
 import by.epam.testingsystem.util.ConfigurationManager;
 import by.epam.testingsystem.util.Constants;
 import org.apache.log4j.Logger;
@@ -26,6 +27,7 @@ public class SaveNewTestCommand implements ICommand {
         HttpSession session = request.getSession();
         String name = (String) session.getAttribute(Constants.ATR_TEST_NAME);
         String description = (String) session.getAttribute(Constants.ATR_TEST_DESCRIPTION);
+        description = CommandHelper.replaceAllHtmlSpecialCharacters(description);
         String[] questionsTd = request.getParameterValues(Constants.PARAM_NAME_TEST_QUESTIONS);
         if (questionsTd != null && questionsTd.length > 0) {
             int[] qestId = new int[questionsTd.length];
@@ -36,6 +38,7 @@ public class SaveNewTestCommand implements ICommand {
             if (dao.createNewTest(name, description, qestId)) {
                 LOG.info("Test (" + name + ") was created.");
                 page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.ADMIN_PAGE_PATH);
+                CommandHelper.clearSession(session);
                 request.setAttribute(Constants.ATR_GOOD_MESSAGE, Constants.CREATE_TEST_SUCCESS_MESS);
             } else {
                 LOG.error("Can't create new test.");

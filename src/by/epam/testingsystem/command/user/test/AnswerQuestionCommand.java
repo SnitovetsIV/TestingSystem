@@ -6,6 +6,7 @@ import by.epam.testingsystem.dao.mysql.MysqlDaoFactory;
 import by.epam.testingsystem.entity.Question;
 import by.epam.testingsystem.entity.Test;
 import by.epam.testingsystem.entity.User;
+import by.epam.testingsystem.util.CommandHelper;
 import by.epam.testingsystem.util.ConfigurationManager;
 import by.epam.testingsystem.util.Constants;
 import org.apache.log4j.Logger;
@@ -49,11 +50,7 @@ public class AnswerQuestionCommand implements ICommand {
                 ITestDao dao = MysqlDaoFactory.getInstance().getTestDAO();
                 User user = (User) session.getAttribute(Constants.ATR_USER);
                 page = ConfigurationManager.getInstance().getProperty(ConfigurationManager.USER_PAGE_PATH);
-                session.removeAttribute(Constants.ATR_CORRECT_QUESTIONS);
-                session.removeAttribute(Constants.ATR_TEST);
-                session.removeAttribute(Constants.ATR_CURRENT_QUESTION);
-                session.removeAttribute(Constants.ATR_ALL_COUNT_QUESTIONS);
-                session.removeAttribute(Constants.ATR_CURRENT_QUESTION_NUMBER);
+                CommandHelper.clearSession(session);
                 if (dao.saveUserCompleteTest(user.getId(), test.getId(), result)) {
                     request.setAttribute(Constants.PARAM_NAME_RESULT_TEST, result + PERCENT_STRING);
                     LOG.info("Test (" + test.getName() + ") was completed by user (" + user.getLogin() + ") on " + result + "%.");

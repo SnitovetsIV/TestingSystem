@@ -27,7 +27,7 @@ public class CommandFactory {
 
     private final HashMap<CommandType, ICommand> allCommands;
 
-    public CommandFactory() {
+    private CommandFactory() {
         allCommands = new HashMap<>();
 
         //Commands for all

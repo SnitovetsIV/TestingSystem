@@ -1,9 +1,6 @@
 package by.epam.testingsystem.dao.mysql;
 
-import by.epam.testingsystem.dao.EntityDao;
-import by.epam.testingsystem.dao.IDAO;
-import by.epam.testingsystem.dao.ITestDao;
-import by.epam.testingsystem.dao.IUserDao;
+import by.epam.testingsystem.dao.*;
 
 /**
  * Class which get different DAO
@@ -12,7 +9,10 @@ import by.epam.testingsystem.dao.IUserDao;
  */
 public class MysqlDaoFactory implements IDAO {
 
-    private Object dao = MysqlDaoProxy.newInstance(new EntityDao(), IUserDao.class, ITestDao.class);
+    private IEntityDao dao = MysqlDaoProxy.newInstance(new EntityDao(), IUserDao.class, ITestDao.class);
+
+    private MysqlDaoFactory() {
+    }
 
     /**
      * @return singleton instance of MysqlDaoFactory

@@ -1,6 +1,7 @@
 package by.epam.testingsystem.command;
 
 import by.epam.testingsystem.entity.User;
+import by.epam.testingsystem.util.CommandHelper;
 import by.epam.testingsystem.util.ConfigurationManager;
 import by.epam.testingsystem.util.Constants;
 
@@ -18,6 +19,7 @@ public class NoCommand implements ICommand {
     public String execute(HttpServletRequest request) {
         String page;
         HttpSession session = request.getSession();
+        CommandHelper.clearSession(session);
         User user = (User) session.getAttribute(Constants.ATR_USER);
         if (user != null) {
             switch (user.getType()) {
