@@ -3,7 +3,6 @@ package test.by.epam.testingsystem.util;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 /**
@@ -13,10 +12,12 @@ public class PropertiesTest {
 
     @Test
     public void configurationPropertiesExist() {
+        ResourceBundle bundle = null;
+        String path = "resources.config";
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle("resources.config");
-        } catch (MissingResourceException ex) {
-            Assert.fail(" Can't find bundle: " + ex.getMessage());
+            bundle = ResourceBundle.getBundle(path);
+        } finally {
+            Assert.assertNotNull(" Can't find bundle: " + path, bundle);
         }
     }
 

@@ -29,9 +29,10 @@ class MysqlDaoProxy implements InvocationHandler {
     }
 
     /**
-     * @param dao
-     * @param interf
-     * @return
+     * @param dao    Objects giving methods which should not be replaced with proxy realization
+     * @param interf Array of interfaces, methods of which should be replaced
+     * @return instance
+     * @see by.epam.testingsystem.dao.IEntityDao
      */
     public static IEntityDao newInstance(IEntityDao dao, Class<?>... interf) {
         return (IEntityDao) Proxy.newProxyInstance(IEntityDao.class.getClassLoader(), interf,

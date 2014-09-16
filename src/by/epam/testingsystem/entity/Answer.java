@@ -17,6 +17,10 @@ public class Answer extends Entity {
     public Answer() {
     }
 
+    /**
+     * @return true if this answer is correct for the question in which it is included
+     * @see by.epam.testingsystem.entity.Question
+     */
     public boolean isCorrect() {
         return correct;
     }

@@ -5,6 +5,11 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
+/**
+ * Tag for representing buttons for switching pages
+ *
+ * @author Илья
+ */
 public class ButtonTag extends TagSupport {
 
     private int step;

@@ -6,6 +6,8 @@ import javax.servlet.*;
 import java.io.IOException;
 
 /**
+ * Filter is assigned for the correct coding of symbols received from a client
+ *
  * @author Илья
  */
 public class CharacterEncodingFilter implements Filter {

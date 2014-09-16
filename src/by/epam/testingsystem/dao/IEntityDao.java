@@ -5,7 +5,7 @@ import by.epam.testingsystem.entity.Answer;
 import java.util.List;
 
 /**
- * Interface of IEntityDao
+ * Interface giving methods which should not be replaced with proxy realization
  *
  * @author Илья
  */

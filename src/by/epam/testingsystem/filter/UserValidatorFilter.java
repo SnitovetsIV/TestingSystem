@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * Filter checks the user's status in accordance command
+ * Filter is assigned for controlling access rights
  *
  * @author Илья
  */
