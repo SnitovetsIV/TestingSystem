@@ -16,6 +16,7 @@
 </div>
 <div class="main-div">
     <div class="header-page"><fmt:message key="labels.jsp.adminpage.header" bundle="${bundleLabel}"/></div>
+    <h3><fmt:message key="labels.jsp.adminpage.hello" bundle="${bundleLabel}"/></h3><br/>
     <c:if test="${not empty badMessage}">
         <div class="bad-message">
             <fmt:message key="${badMessage}" bundle="${bundleMess}"/><br/>

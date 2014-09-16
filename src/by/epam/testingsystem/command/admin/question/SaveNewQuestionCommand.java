@@ -39,7 +39,10 @@ public class SaveNewQuestionCommand implements ICommand {
             List<Answer> answerList = new ArrayList<>();
             for (int i = 0; i < answers.length; i++) {
                 Answer answer = new Answer();
-                answer.setDescription(answers[i].trim());
+                String descriptionAnswer = answers[i].trim();
+                descriptionAnswer = descriptionAnswer.replaceAll("<", "&lt;");
+                descriptionAnswer = descriptionAnswer.replaceAll(">", "&gt;");
+                answer.setDescription(descriptionAnswer);
                 boolean correct = false;
                 for (int numCorrect : correctAnswers) {
                     if (numCorrect == i + 1) {

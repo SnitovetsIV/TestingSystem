@@ -37,7 +37,6 @@
                         <ol>
                             <c:forEach var="answer" items="${question.answers}" varStatus="status">
                                 <li>${answer.description} (${answer.isCorrect()})</li>
-
                             </c:forEach>
                         </ol>
                     </label><br/>

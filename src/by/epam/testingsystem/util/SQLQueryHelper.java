@@ -44,14 +44,14 @@ public final class SQLQueryHelper {
             " JOIN topic ON topic.topic_id=question.topic_id";
     private static final String SQL_READ_QUESTIONS_BY_TEST_ID = SQL_READ_QUESTION_BASIS +
             " WHERE question.question_id IN (SELECT test_question.question_id FROM test_question WHERE test_id=?)" +
-            " ORDER BY question.question_id";
+            " ORDER BY question.topic_id ASC";
 
     /**
      * Admin queries
      */
     private static final String SQL_READ_QUESTIONS_BY_TOPICS = SQL_READ_QUESTION_BASIS +
             " WHERE topic.topic_id IN (SELECT topic.topic_id FROM topic WHERE LOCATE(topic.name,?)>0)" +
-            " ORDER BY question.question_id";
+            " ORDER BY question.topic_id ASC";
     private static final String SQL_READ_ALL_USERS = "SELECT user.user_id, user.login, user.name, user.surname," +
             " COUNT(DISTINCT user_test.user_test_id) AS 'count test', " +
             " ROUND(SUM(user_test.completed)/COUNT(question.question_id),1) AS 'stat'" +

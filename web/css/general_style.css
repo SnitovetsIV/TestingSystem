@@ -424,7 +424,15 @@ p {
     left: 20px;
     text-indent: 0;
     background-color: gainsboro;
+}
 
+.answer-style {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    text-indent: 0;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .show-role {
