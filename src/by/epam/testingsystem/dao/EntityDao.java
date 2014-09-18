@@ -170,8 +170,6 @@ public class EntityDao implements IEntityDao {
                 } else {
                     connection.rollback();
                 }
-            } else {
-                connection.rollback();
             }
         } catch (DAOException | SQLException e) {
             LOG.error(e);
